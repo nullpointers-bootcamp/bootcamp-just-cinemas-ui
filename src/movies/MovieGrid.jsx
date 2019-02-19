@@ -54,7 +54,7 @@ MovieGrid.propTypes = {
   movies: PropTypes.shape({
     items: PropTypes.array,
     fetching: PropTypes.bool.isRequired,
-    error: PropTypes.string.isRequired
+    error: PropTypes.string
   }),
   fetchMovies: PropTypes.func.isRequired
 };

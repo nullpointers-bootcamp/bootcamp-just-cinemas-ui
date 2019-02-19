@@ -58,9 +58,7 @@ Detail.defaultProps = {
 
 Detail.propTypes = {
   movie: PropTypes.shape({
-    stills: PropTypes.shape({
-      items: PropTypes.array
-    }),
+    stills: PropTypes.array,
     name: PropTypes.string.isRequired,
     slug: PropTypes.string.isRequired,
     synopsis: PropTypes.string.isRequired

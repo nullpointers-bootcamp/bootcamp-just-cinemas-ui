@@ -6,7 +6,8 @@ import { BrowserRouter as Router } from "react-router-dom";
 
 it("show display in progres when movie is been fetching", () => {
   const movies = {
-    fetching: true
+    fetching: true,
+    error: ""
   };
   const tree = renderer
     .create(
@@ -35,7 +36,7 @@ it("show error when movie fetch has failed", () => {
 
 it("show movie list when fetching movies", () => {
   const movies = {
-    error: false,
+    error: "",
     fetching: false,
     items: movieItems
   };
