@@ -12,6 +12,8 @@ it("show movie detail information", () => {
     image: "kabali",
     stills: ["kabali", "kabali", "kabali"]
   };
-  const tree = renderer.create(<Detail movie={movie} />).toJSON();
+  const tree = renderer
+    .create(<Detail movie={movie} fetchMovieDetail={() => {}} />)
+    .toJSON();
   expect(tree).toMatchSnapshot();
 });

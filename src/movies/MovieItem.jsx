@@ -17,7 +17,8 @@ MovieItem.defaultProps = {};
 
 MovieItem.propTypes = {
   name: PropTypes.string.isRequired,
-  slug: PropTypes.string.isRequired
+  slug: PropTypes.string.isRequired,
+  experiences: PropTypes.string.isRequired
 };
 
 export default MovieItem;

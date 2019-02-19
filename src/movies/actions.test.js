@@ -1,5 +1,4 @@
 import fetchMovies, {
-  NOW_SHOWING,
   FETCH_MOVIES_PROGRESS,
   FETCH_MOVIES_SUCCESS,
   FETCH_MOVIES_FAILURE
@@ -37,8 +36,6 @@ describe("movies/actions", () => {
   it("should fetch movies from server which are now-showing and return FETCH_MOVIES_SUCCESS", async () => {
     mock.onGet("http://localhost:9090/movies/now-showing").reply(200, apiData);
 
-    let expectedActions = [];
-
     store.dispatch(fetchMovies()).then(() => {
       expect(store.getActions()[0]).toEqual({ type: FETCH_MOVIES_PROGRESS });
       expect(store.getActions()[1]).toEqual({
@@ -50,7 +47,6 @@ describe("movies/actions", () => {
 
   it("should return FETCH_MOVIES_FAILURE if http 500", async () => {
     mock.onGet("http://localhost:9090/movies/now-showing").reply(500, {});
-    let expectedActions = [];
     store.dispatch(fetchMovies("now-showing")).then(() => {
       expect(store.getActions()[0]).toEqual({ type: FETCH_MOVIES_PROGRESS });
       expect(store.getActions()[1]).toEqual({ type: FETCH_MOVIES_FAILURE });

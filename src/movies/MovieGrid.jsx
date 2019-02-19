@@ -45,13 +45,18 @@ class MovieGrid extends Component {
 MovieGrid.defaultProps = {
   movies: {
     items: []
-  }
+  },
+  fetching: false,
+  error: ""
 };
 
 MovieGrid.propTypes = {
   movies: PropTypes.shape({
-    items: PropTypes.array
-  })
+    items: PropTypes.array,
+    fetching: PropTypes.bool.isRequired,
+    error: PropTypes.string.isRequired
+  }),
+  fetchMovies: PropTypes.func.isRequired
 };
 
 export default MovieGrid;
