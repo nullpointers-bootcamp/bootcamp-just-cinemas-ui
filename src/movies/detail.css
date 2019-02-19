@@ -3,8 +3,17 @@
 }
 
 .stills-wrapper {
-  display: grid;
-  grid-template-columns: auto auto auto auto auto auto;
-  grid-gap: 10px;
+  display: flex;
   margin-top: 2%;
+}
+
+.still-item {
+  margin-right: 1%;
+  order: 2;
+}
+
+.stills-label,
+.synopsis-label {
+  color: purple;
+  font-weight: 600;
 }
