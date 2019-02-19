@@ -1,6 +1,4 @@
 import axios from "axios";
-import changeCase from "change-case";
-import slug from "slug";
 
 export const FETCH_MOVIES_PROGRESS = "FETCH_MOVIES_PROGRESS";
 export const FETCH_MOVIES_SUCCESS = "FETCH_MOVIES_SUCCESS";
@@ -36,13 +34,8 @@ const fetchMovies = () => {
       //   name: 'Kabali',
       //   experience: 'asfasdfag',
       // }]}
-      const moviesData = movies.data.map(movie => {
-        const sluggedData = slug(changeCase.sentenceCase(movie.name), {
-          lower: true
-        });
-        return { ...movie, slug: sluggedData };
-      });
-      dispatch(movieDataFetched(moviesData));
+
+      dispatch(movieDataFetched(movies.data));
     } catch (error) {
       dispatch(movieDataFetchFailure);
     }
@@ -63,7 +56,7 @@ export const fetchMovieDetail = movieId => {
     //     stills: ["kabali", "kabali", "kabali"]
     //   }
     // };
-    dispatch(movieDetailFetched(movie));
+    dispatch(movieDetailFetched(movie.data));
   };
 };
 export default fetchMovies;

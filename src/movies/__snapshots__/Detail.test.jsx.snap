@@ -21,7 +21,7 @@ exports[`show movie detail information 1`] = `
     <p
       className="synopsis-content"
     >
-      Thalaiva's Crime thriller.
+      A man attempts to protect his family from enemies, gained in his time as a gangster. After he is released from prison on false charges, he resumes his post as gang leader and continues a long-held rivalry.
     </p>
   </div>
   <div>
@@ -34,19 +34,14 @@ exports[`show movie detail information 1`] = `
       className="stills-wrapper"
     >
       <img
-        alt="kabali"
+        alt="kabali_1"
         className="still-item"
-        src="https://s3.ap-south-1.amazonaws.com/twspicinemas/stills/kabali.jpg"
+        src="https://s3.ap-south-1.amazonaws.com/twspicinemas/stills/kabali_1.jpg"
       />
       <img
-        alt="kabali"
+        alt="kabali_2"
         className="still-item"
-        src="https://s3.ap-south-1.amazonaws.com/twspicinemas/stills/kabali.jpg"
-      />
-      <img
-        alt="kabali"
-        className="still-item"
-        src="https://s3.ap-south-1.amazonaws.com/twspicinemas/stills/kabali.jpg"
+        src="https://s3.ap-south-1.amazonaws.com/twspicinemas/stills/kabali_2.jpg"
       />
     </div>
   </div>

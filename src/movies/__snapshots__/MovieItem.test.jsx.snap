@@ -3,7 +3,7 @@
 exports[`show movie item 1`] = `
 <a
   className="movie-item"
-  href="/movies/slug"
+  href="/movies/1"
   onClick={[Function]}
 >
   <img

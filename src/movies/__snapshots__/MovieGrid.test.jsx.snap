@@ -18,13 +18,13 @@ exports[`show movie list when fetching movies 1`] = `
 >
   <a
     className="movie-item"
-    href="/movies/Kabali"
+    href="/movies/1"
     onClick={[Function]}
   >
     <img
       alt="Kabali"
       className="movie-thumbnail"
-      src="https://s3.ap-south-1.amazonaws.com/twspicinemas/poster/Kabali.jpg"
+      src="https://s3.ap-south-1.amazonaws.com/twspicinemas/poster/kabali.jpg"
     />
     <h5
       className="name"
@@ -39,18 +39,18 @@ exports[`show movie list when fetching movies 1`] = `
   </a>
   <a
     className="movie-item"
-    href="/movies/Sultan"
+    href="/movies/2"
     onClick={[Function]}
   >
     <img
-      alt="Sultan"
+      alt="Theri"
       className="movie-thumbnail"
-      src="https://s3.ap-south-1.amazonaws.com/twspicinemas/poster/Sultan.jpg"
+      src="https://s3.ap-south-1.amazonaws.com/twspicinemas/poster/theri.jpg"
     />
     <h5
       className="name"
     >
-      Sultan
+      Theri
     </h5>
     <p
       className="experiences"
@@ -60,13 +60,13 @@ exports[`show movie list when fetching movies 1`] = `
   </a>
   <a
     className="movie-item"
-    href="/movies/Sultan"
+    href="/movies/3"
     onClick={[Function]}
   >
     <img
       alt="Banjo"
       className="movie-thumbnail"
-      src="https://s3.ap-south-1.amazonaws.com/twspicinemas/poster/Sultan.jpg"
+      src="https://s3.ap-south-1.amazonaws.com/twspicinemas/poster/banjo.jpg"
     />
     <h5
       className="name"
@@ -81,13 +81,13 @@ exports[`show movie list when fetching movies 1`] = `
   </a>
   <a
     className="movie-item"
-    href="/movies/Suicide-Squad"
+    href="/movies/4"
     onClick={[Function]}
   >
     <img
       alt="Suicide Squad"
       className="movie-thumbnail"
-      src="https://s3.ap-south-1.amazonaws.com/twspicinemas/poster/Suicide-Squad.jpg"
+      src="https://s3.ap-south-1.amazonaws.com/twspicinemas/poster/suicide-squad.jpg"
     />
     <h5
       className="name"
@@ -102,13 +102,13 @@ exports[`show movie list when fetching movies 1`] = `
   </a>
   <a
     className="movie-item"
-    href="/movies/Namadhu"
+    href="/movies/5"
     onClick={[Function]}
   >
     <img
       alt="Namadhu"
       className="movie-thumbnail"
-      src="https://s3.ap-south-1.amazonaws.com/twspicinemas/poster/Namadhu.jpg"
+      src="https://s3.ap-south-1.amazonaws.com/twspicinemas/poster/namadhu.jpg"
     />
     <h5
       className="name"
@@ -123,13 +123,13 @@ exports[`show movie list when fetching movies 1`] = `
   </a>
   <a
     className="movie-item"
-    href="/movies/Pelli0-Chupulu"
+    href="/movies/6"
     onClick={[Function]}
   >
     <img
       alt="Pelli Chupulu"
       className="movie-thumbnail"
-      src="https://s3.ap-south-1.amazonaws.com/twspicinemas/poster/Pelli0-Chupulu.jpg"
+      src="https://s3.ap-south-1.amazonaws.com/twspicinemas/poster/pelli-chupulu.jpg"
     />
     <h5
       className="name"
@@ -144,13 +144,13 @@ exports[`show movie list when fetching movies 1`] = `
   </a>
   <a
     className="movie-item"
-    href="/movies/Pink"
+    href="/movies/7"
     onClick={[Function]}
   >
     <img
       alt="Pink"
       className="movie-thumbnail"
-      src="https://s3.ap-south-1.amazonaws.com/twspicinemas/poster/Pink.jpg"
+      src="https://s3.ap-south-1.amazonaws.com/twspicinemas/poster/pink.jpg"
     />
     <h5
       className="name"
@@ -165,13 +165,13 @@ exports[`show movie list when fetching movies 1`] = `
   </a>
   <a
     className="movie-item"
-    href="/movies/Remo"
+    href="/movies/8"
     onClick={[Function]}
   >
     <img
       alt="Remo"
       className="movie-thumbnail"
-      src="https://s3.ap-south-1.amazonaws.com/twspicinemas/poster/Remo.jpg"
+      src="https://s3.ap-south-1.amazonaws.com/twspicinemas/poster/remo.jpg"
     />
     <h5
       className="name"
@@ -186,13 +186,13 @@ exports[`show movie list when fetching movies 1`] = `
   </a>
   <a
     className="movie-item"
-    href="/movies/Inferno"
+    href="/movies/9"
     onClick={[Function]}
   >
     <img
       alt="Inferno"
       className="movie-thumbnail"
-      src="https://s3.ap-south-1.amazonaws.com/twspicinemas/poster/Inferno.jpg"
+      src="https://s3.ap-south-1.amazonaws.com/twspicinemas/poster/inferno.jpg"
     />
     <h5
       className="name"
@@ -203,6 +203,132 @@ exports[`show movie list when fetching movies 1`] = `
       className="experiences"
     >
       Dolby Atmos, RDX, SUB
+    </p>
+  </a>
+  <a
+    className="movie-item"
+    href="/movies/10"
+    onClick={[Function]}
+  >
+    <img
+      alt="Iron Man 1"
+      className="movie-thumbnail"
+      src="https://s3.ap-south-1.amazonaws.com/twspicinemas/poster/ironman1.jpg"
+    />
+    <h5
+      className="name"
+    >
+      Iron Man 1
+    </h5>
+    <p
+      className="experiences"
+    >
+      RDX, Dolby Atmos, SUB
+    </p>
+  </a>
+  <a
+    className="movie-item"
+    href="/movies/11"
+    onClick={[Function]}
+  >
+    <img
+      alt="Iron Man 2"
+      className="movie-thumbnail"
+      src="https://s3.ap-south-1.amazonaws.com/twspicinemas/poster/ironman2.jpg"
+    />
+    <h5
+      className="name"
+    >
+      Iron Man 2
+    </h5>
+    <p
+      className="experiences"
+    >
+      RDX, Dolby Atmos, SUB
+    </p>
+  </a>
+  <a
+    className="movie-item"
+    href="/movies/12"
+    onClick={[Function]}
+  >
+    <img
+      alt="Iron Man 3"
+      className="movie-thumbnail"
+      src="https://s3.ap-south-1.amazonaws.com/twspicinemas/poster/ironman3.jpg"
+    />
+    <h5
+      className="name"
+    >
+      Iron Man 3
+    </h5>
+    <p
+      className="experiences"
+    >
+      RDX, Dolby Atmos, SUB
+    </p>
+  </a>
+  <a
+    className="movie-item"
+    href="/movies/13"
+    onClick={[Function]}
+  >
+    <img
+      alt="Avengers"
+      className="movie-thumbnail"
+      src="https://s3.ap-south-1.amazonaws.com/twspicinemas/poster/avengers.jpg"
+    />
+    <h5
+      className="name"
+    >
+      Avengers
+    </h5>
+    <p
+      className="experiences"
+    >
+      RDX, Dolby Atmos, SUB
+    </p>
+  </a>
+  <a
+    className="movie-item"
+    href="/movies/14"
+    onClick={[Function]}
+  >
+    <img
+      alt="Thor"
+      className="movie-thumbnail"
+      src="https://s3.ap-south-1.amazonaws.com/twspicinemas/poster/thor.jpg"
+    />
+    <h5
+      className="name"
+    >
+      Thor
+    </h5>
+    <p
+      className="experiences"
+    >
+      RDX, Dolby Atmos, SUB
+    </p>
+  </a>
+  <a
+    className="movie-item"
+    href="/movies/15"
+    onClick={[Function]}
+  >
+    <img
+      alt="Age of Ultron"
+      className="movie-thumbnail"
+      src="https://s3.ap-south-1.amazonaws.com/twspicinemas/poster/ageofultron.jpg"
+    />
+    <h5
+      className="name"
+    >
+      Age of Ultron
+    </h5>
+    <p
+      className="experiences"
+    >
+      RDX, Dolby Atmos, SUB
     </p>
   </a>
 </div>

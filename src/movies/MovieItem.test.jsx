@@ -6,7 +6,12 @@ it("show movie item", () => {
   const tree = renderer
     .create(
       <Router>
-        <MovieItem name="name" slug="slug" experiences="experiences" />
+        <MovieItem
+          name="name"
+          id={1}
+          imageName="slug"
+          experiences="experiences"
+        />
       </Router>
     )
     .toJSON();

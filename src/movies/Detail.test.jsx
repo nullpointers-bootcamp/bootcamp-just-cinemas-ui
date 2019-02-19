@@ -1,19 +1,10 @@
 import React from "react";
 import renderer from "react-test-renderer";
 import Detail from "./Detail";
-
+import { movieDetail } from "./mock-data";
 it("show movie detail information", () => {
-  const movie = {
-    id: 1,
-    name: "Kabali",
-    experiences: "RDX, Dolby Atmos, SUB",
-    slug: "Kabali",
-    synopsis: "Thalaiva's Crime thriller.",
-    image: "kabali",
-    stills: ["kabali", "kabali", "kabali"]
-  };
   const tree = renderer
-    .create(<Detail movie={movie} fetchMovieDetail={() => {}} />)
+    .create(<Detail movie={movieDetail} id={1} fetchMovieDetail={() => {}} />)
     .toJSON();
   expect(tree).toMatchSnapshot();
 });

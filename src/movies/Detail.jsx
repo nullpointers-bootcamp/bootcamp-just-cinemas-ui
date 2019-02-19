@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import "./detail.css";
 class Detail extends React.Component {
   componentDidMount() {
-    this.props.fetchMovieDetail(12);
+    this.props.fetchMovieDetail(this.props.id);
   }
 
   renderSynopsis() {
@@ -39,8 +39,8 @@ class Detail extends React.Component {
     if (!this.props.movie) {
       return <div>loading...</div>;
     }
-    const { name, slug } = this.props.movie;
-    const imageUrl = `https://s3.ap-south-1.amazonaws.com/twspicinemas/banner/${slug.toLowerCase()}.jpg`;
+    const { name, imageName } = this.props.movie;
+    const imageUrl = `https://s3.ap-south-1.amazonaws.com/twspicinemas/banner/${imageName.toLowerCase()}.jpg`;
     return (
       <div>
         <h1 className="name">{name}</h1>
@@ -53,17 +53,19 @@ class Detail extends React.Component {
 }
 
 Detail.defaultProps = {
-  movie: null
+  movie: null,
+  id: null
 };
 
 Detail.propTypes = {
   movie: PropTypes.shape({
     stills: PropTypes.array,
     name: PropTypes.string.isRequired,
-    slug: PropTypes.string.isRequired,
+    imageName: PropTypes.string.isRequired,
     synopsis: PropTypes.string.isRequired
   }),
-  fetchMovieDetail: PropTypes.func.isRequired
+  fetchMovieDetail: PropTypes.func.isRequired,
+  id: PropTypes.number.isRequired
 };
 
 export default Detail;

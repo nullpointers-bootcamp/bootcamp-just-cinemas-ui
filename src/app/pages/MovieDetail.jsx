@@ -7,12 +7,15 @@ class MovieDetail extends React.Component {
   render() {
     const {
       movies: { detail },
-      fetchMovieDetail
+      fetchMovieDetail,
+      match: {
+        params: { id }
+      }
     } = this.props;
 
     return (
       <div>
-        <Detail movie={detail} fetchMovieDetail={fetchMovieDetail} />
+        <Detail movie={detail} id={id} fetchMovieDetail={fetchMovieDetail} />
       </div>
     );
   }
