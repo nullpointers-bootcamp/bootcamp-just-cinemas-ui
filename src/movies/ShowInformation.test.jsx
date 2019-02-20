@@ -9,13 +9,20 @@ configure({ adapter: new Adapter() });
 
 it("show show information", () => {
   const tree = renderer
-    .create(<ShowInformation shows={showInformation} />)
+    .create(
+      <ShowInformation
+        shows={showInformation}
+        fetchSeatInformation={() => {}}
+      />
+    )
     .toJSON();
   expect(tree).toMatchSnapshot();
 });
 
 it("should group show information by theatre-id and screen-id", () => {
-  const wrapper = shallow(<ShowInformation shows={showInformation} />);
+  const wrapper = shallow(
+    <ShowInformation shows={showInformation} fetchSeatInformation={() => {}} />
+  );
   expect(wrapper.instance().groupShowInformation()).toEqual({
     "11": showInformation
   });

@@ -4,7 +4,9 @@ import {
   FETCH_MOVIES_FAILURE,
   FETCH_MOVIE_DETAIL_SUCCESS,
   SET_BOOKING_DATE,
-  FETCH_SHOW_INFORMATION_SUCCESS
+  FETCH_SHOW_INFORMATION_SUCCESS,
+  FETCH_SEAT_INFORMATION_SUCCESS,
+  SET_SELECTED_SHOW
 } from "./actions";
 
 const reducer = (
@@ -13,7 +15,9 @@ const reducer = (
     items: [],
     detail: null,
     bookingDate: null,
-    showInformation: []
+    showInformation: [],
+    selectedShow: null,
+    seatInformation: null
   },
   action
 ) => {
@@ -30,6 +34,10 @@ const reducer = (
       return { ...state, bookingDate: action.payload };
     case FETCH_SHOW_INFORMATION_SUCCESS:
       return { ...state, showInformation: action.payload };
+    case SET_SELECTED_SHOW:
+      return { ...state, selectedShow: action.payload };
+    case FETCH_SEAT_INFORMATION_SUCCESS:
+      return { ...state, seatInformation: action.payload };
     default:
       return { ...state };
   }

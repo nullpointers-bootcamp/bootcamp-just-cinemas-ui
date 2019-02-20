@@ -21,8 +21,12 @@ class ShowInformation extends React.Component {
         </div>
         <div className="show-timings-wrapper">
           {shows.map((show, index) => (
-            <div key={index} className="show-timing">
-              {show.time}
+            <div
+              key={index}
+              className="show-timing"
+              onClick={() => this.props.fetchSeatInformation(show)}
+            >
+              <span className="timing">{show.time}</span>
             </div>
           ))}
         </div>
@@ -36,7 +40,8 @@ ShowInformation.defaultProps = {
 };
 
 ShowInformation.propTypes = {
-  shows: PropTypes.array.isRequired
+  shows: PropTypes.array.isRequired,
+  fetchSeatInformation: PropTypes.func.isRequired
 };
 
 export default ShowInformation;

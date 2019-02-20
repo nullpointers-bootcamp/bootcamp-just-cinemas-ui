@@ -6,6 +6,8 @@ export const FETCH_MOVIES_FAILURE = "FETCH_MOVIES_FAILURE";
 export const FETCH_MOVIE_DETAIL_SUCCESS = "FETCH_MOVIE_DETAIL_SUCCESS";
 export const FETCH_SHOW_INFORMATION_SUCCESS = "FETCH_SHOW_INFORMATION_SUCCESS";
 export const SET_BOOKING_DATE = "SET_BOOKING_DATE";
+export const SET_SELECTED_SHOW = "SET_SELECTED_SHOW";
+export const FETCH_SEAT_INFORMATION_SUCCESS = "FETCH_SEAT_INFORMATION_SUCCESS";
 
 const fetchMoviesInProgress = {
   type: FETCH_MOVIES_PROGRESS
@@ -75,6 +77,19 @@ const showInformationFetched = data => {
     payload: data
   };
 };
+const setSelectedShow = show => {
+  return {
+    type: SET_SELECTED_SHOW,
+    payload: show
+  };
+};
+
+const seatInformationFetched = data => {
+  return {
+    type: FETCH_SEAT_INFORMATION_SUCCESS,
+    payload: data
+  };
+};
 export const fetchShowInformation = (date, movieId) => {
   return async dispatch => {
     dispatch(setDate(date));
@@ -84,4 +99,15 @@ export const fetchShowInformation = (date, movieId) => {
     dispatch(showInformationFetched(showInformation.data));
   };
 };
+
+export const fetchSeatInformation = show => {
+  return async dispatch => {
+    dispatch(setSelectedShow(show));
+    const seatInformation = await axios.get(
+      `http://localhost:9090/shows/${show.showId}/seats`
+    );
+    dispatch(seatInformationFetched(seatInformation.data));
+  };
+};
+
 export default fetchMovies;

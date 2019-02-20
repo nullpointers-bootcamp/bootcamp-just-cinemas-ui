@@ -180,7 +180,7 @@ export const movieDetail = {
 
 export const showInformation = [
   {
-    showId: 40,
+    showId: 1,
     date: "2019-02-14",
     time: "09:00",
     theatreId: 1,
@@ -189,3 +189,9 @@ export const showInformation = [
     screenName: "Screen 1"
   }
 ];
+
+export const seatInformation = {
+  noOfRows: 26,
+  noOfColumns: 10,
+  bookedSeats: []
+};

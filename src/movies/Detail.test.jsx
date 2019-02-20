@@ -17,6 +17,7 @@ it("show movie detail information", () => {
         fetchShowInformation={() => {}}
         bookingDate={""}
         showInformation={[]}
+        fetchSeatInformation={() => {}}
       />
     )
     .toJSON();
@@ -32,6 +33,7 @@ it("should set show equal to true when openBookTickets called", () => {
       fetchShowInformation={() => {}}
       bookingDate={""}
       showInformation={[]}
+      fetchSeatInformation={() => {}}
     />
   );
   wrapper.instance().openBookTickets();
@@ -47,6 +49,7 @@ it("should set show equal to false when closeBookTickets called", () => {
       fetchShowInformation={() => {}}
       bookingDate={""}
       showInformation={[]}
+      fetchSeatInformation={() => {}}
     />
   );
   wrapper.instance().openBookTickets();

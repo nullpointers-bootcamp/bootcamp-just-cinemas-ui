@@ -5,14 +5,22 @@ import fetchMovies, {
   FETCH_MOVIE_DETAIL_SUCCESS,
   fetchMovieDetail,
   FETCH_SHOW_INFORMATION_SUCCESS,
+  SET_SELECTED_SHOW,
   SET_BOOKING_DATE,
-  fetchShowInformation
+  fetchShowInformation,
+  fetchSeatInformation,
+  FETCH_SEAT_INFORMATION_SUCCESS
 } from "../movies/actions";
 import MockAdapter from "axios-mock-adapter";
 import thunk from "redux-thunk";
 import configureMockStore from "redux-mock-store";
 import axios from "axios";
-import { movieDetail, movieItems, showInformation } from "./mock-data";
+import {
+  movieDetail,
+  movieItems,
+  showInformation,
+  seatInformation
+} from "./mock-data";
 
 const mockStore = configureMockStore([thunk]);
 const mock = new MockAdapter(axios);
@@ -71,6 +79,23 @@ describe("movies/actions", () => {
       expect(store.getActions()[1]).toEqual({
         type: FETCH_SHOW_INFORMATION_SUCCESS,
         payload: showInformation
+      });
+    });
+  });
+
+  it("should fetch the seat information for the given shown and return FETCH_SEAT_INFORMATION_SUCCESS", async () => {
+    mock
+      .onGet("http://localhost:9090/shows/1/seats")
+      .reply(200, seatInformation);
+
+    store.dispatch(fetchSeatInformation(showInformation[0])).then(() => {
+      expect(store.getActions()[0]).toEqual({
+        type: SET_SELECTED_SHOW,
+        payload: showInformation[0]
+      });
+      expect(store.getActions()[1]).toEqual({
+        type: FETCH_SEAT_INFORMATION_SUCCESS,
+        payload: seatInformation
       });
     });
   });

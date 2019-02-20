@@ -57,13 +57,22 @@ class BookTicketPopup extends React.Component {
   }
 
   render() {
-    const { show, onClose, bookingDate, showInformation } = this.props;
+    const {
+      show,
+      onClose,
+      bookingDate,
+      showInformation,
+      fetchSeatInformation
+    } = this.props;
     return (
       <Popup open={show} onClose={onClose}>
         <div>
           <div className="book-ticket-wrapper">{this.renderDates()}</div>
           {bookingDate && showInformation.length ? (
-            <ShowInformation shows={showInformation} />
+            <ShowInformation
+              shows={showInformation}
+              fetchSeatInformation={fetchSeatInformation}
+            />
           ) : null}
         </div>
       </Popup>
@@ -84,6 +93,7 @@ BookTicketPopup.propTypes = {
   fetchShowInformation: PropTypes.func.isRequired,
   movieId: PropTypes.string.isRequired,
   bookingDate: PropTypes.string.isRequired,
-  showInformation: PropTypes.array.isRequired
+  showInformation: PropTypes.array.isRequired,
+  fetchSeatInformation: PropTypes.func.isRequired
 };
 export default BookTicketPopup;

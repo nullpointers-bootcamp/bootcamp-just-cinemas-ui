@@ -1,7 +1,11 @@
 import React from "react";
 import Detail from "../../movies/Detail";
 import { connect } from "react-redux";
-import { fetchMovieDetail, fetchShowInformation } from "../../movies/actions";
+import {
+  fetchMovieDetail,
+  fetchShowInformation,
+  fetchSeatInformation
+} from "../../movies/actions";
 
 class MovieDetail extends React.Component {
   render() {
@@ -9,6 +13,7 @@ class MovieDetail extends React.Component {
       movies: { detail, bookingDate, showInformation },
       fetchMovieDetail,
       fetchShowInformation,
+      fetchSeatInformation,
       match: {
         params: { id }
       }
@@ -23,6 +28,7 @@ class MovieDetail extends React.Component {
           fetchShowInformation={fetchShowInformation}
           bookingDate={bookingDate}
           showInformation={showInformation}
+          fetchSeatInformation={fetchSeatInformation}
         />
       </div>
     );
@@ -36,6 +42,7 @@ export default connect(
   dispatch => ({
     fetchMovieDetail: movieId => dispatch(fetchMovieDetail(movieId)),
     fetchShowInformation: (date, movieId) =>
-      dispatch(fetchShowInformation(date, movieId))
+      dispatch(fetchShowInformation(date, movieId)),
+    fetchSeatInformation: show => dispatch(fetchSeatInformation(show))
   })
 )(MovieDetail);

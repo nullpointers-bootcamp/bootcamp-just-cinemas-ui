@@ -24,4 +24,12 @@
   flex-direction: column;
   justify-content: center;
   cursor: pointer;
+  font-weight: 900;
+}
+.timing {
+  background: olivedrab;
+  color: #fff;
+  margin: 10px;
+  padding: 10px;
+  align-self: center;
 }

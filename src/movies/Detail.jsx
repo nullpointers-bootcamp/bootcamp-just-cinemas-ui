@@ -71,7 +71,10 @@ class Detail extends React.Component {
     const {
       movie: { name, imageName },
       bookingDate,
-      showInformation
+      showInformation,
+      fetchSeatInformation,
+      fetchShowInformation,
+      id
     } = this.props;
     const imageUrl = `https://s3.ap-south-1.amazonaws.com/twspicinemas/banner/${imageName.toLowerCase()}.jpg`;
     return (
@@ -84,10 +87,11 @@ class Detail extends React.Component {
         <BookTicketPopup
           show={this.state.show}
           onClose={this.closeBookTickets}
-          fetchShowInformation={this.props.fetchShowInformation}
-          movieId={this.props.id}
+          fetchShowInformation={fetchShowInformation}
+          movieId={id}
           bookingDate={bookingDate}
           showInformation={showInformation}
+          fetchSeatInformation={fetchSeatInformation}
         />
       </div>
     );
@@ -110,7 +114,8 @@ Detail.propTypes = {
   id: PropTypes.string.isRequired,
   fetchShowInformation: PropTypes.func.isRequired,
   bookingDate: PropTypes.string.isRequired,
-  showInformation: PropTypes.array.isRequired
+  showInformation: PropTypes.array.isRequired,
+  fetchSeatInformation: PropTypes.func.isRequired
 };
 
 export default Detail;
