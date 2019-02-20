@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import moment from "moment";
 import "./bookingTicketPopup.css";
 import cx from "classnames";
+import ShowInformation from "./ShowInformation";
 
 class BookTicketPopup extends React.Component {
   componentDidMount() {
@@ -56,10 +57,15 @@ class BookTicketPopup extends React.Component {
   }
 
   render() {
-    const { show, onClose } = this.props;
+    const { show, onClose, bookingDate, showInformation } = this.props;
     return (
       <Popup open={show} onClose={onClose}>
-        <div className="book-ticket-wrapper">{this.renderDates()}</div>
+        <div>
+          <div className="book-ticket-wrapper">{this.renderDates()}</div>
+          {bookingDate && showInformation.length ? (
+            <ShowInformation shows={showInformation} />
+          ) : null}
+        </div>
       </Popup>
     );
   }
@@ -68,7 +74,8 @@ class BookTicketPopup extends React.Component {
 BookTicketPopup.defaultProps = {
   show: false,
   movieId: null,
-  bookingDate: null
+  bookingDate: null,
+  showInformation: []
 };
 
 BookTicketPopup.propTypes = {
@@ -76,6 +83,7 @@ BookTicketPopup.propTypes = {
   onClose: PropTypes.func.isRequired,
   fetchShowInformation: PropTypes.func.isRequired,
   movieId: PropTypes.string.isRequired,
-  bookingDate: PropTypes.string.isRequired
+  bookingDate: PropTypes.string.isRequired,
+  showInformation: PropTypes.array.isRequired
 };
 export default BookTicketPopup;

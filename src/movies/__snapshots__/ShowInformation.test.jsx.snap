@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`show show information 1`] = `
+<div
+  className="show-row"
+>
+  <div
+    className="show-theatre-screen"
+  >
+    <div>
+      PVR
+    </div>
+    <div>
+      Screen 1
+    </div>
+  </div>
+  <div
+    className="show-timings-wrapper"
+  >
+    <div
+      className="show-timing"
+    >
+      09:00
+    </div>
+  </div>
+</div>
+`;

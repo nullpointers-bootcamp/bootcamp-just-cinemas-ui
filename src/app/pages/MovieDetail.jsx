@@ -6,7 +6,7 @@ import { fetchMovieDetail, fetchShowInformation } from "../../movies/actions";
 class MovieDetail extends React.Component {
   render() {
     const {
-      movies: { detail, bookingDate },
+      movies: { detail, bookingDate, showInformation },
       fetchMovieDetail,
       fetchShowInformation,
       match: {
@@ -22,6 +22,7 @@ class MovieDetail extends React.Component {
           fetchMovieDetail={fetchMovieDetail}
           fetchShowInformation={fetchShowInformation}
           bookingDate={bookingDate}
+          showInformation={showInformation}
         />
       </div>
     );

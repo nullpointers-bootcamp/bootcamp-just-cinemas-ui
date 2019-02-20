@@ -43,92 +43,94 @@ Array [
               }
         }
     >
-        <div
-            className="book-ticket-wrapper"
-        >
+        <div>
             <div
-                className="booking-dates-wrapper"
+                className="book-ticket-wrapper"
             >
                 <div
-                    className="booking-date-item booking-date-label"
+                    className="booking-dates-wrapper"
                 >
-                    Date :
-                </div>
-                <div
-                    className="booking-date-item date-selected"
-                    onClick={[Function]}
-                >
-                    <div>
-                        Wed
+                    <div
+                        className="booking-date-item booking-date-label"
+                    >
+                        Date :
                     </div>
-                    <div>
-                        20
+                    <div
+                        className="booking-date-item date-selected"
+                        onClick={[Function]}
+                    >
+                        <div>
+                            Wed
+                        </div>
+                        <div>
+                            20
+                        </div>
                     </div>
-                </div>
-                <div
-                    className="booking-date-item"
-                    onClick={[Function]}
-                >
-                    <div>
-                        Thu
+                    <div
+                        className="booking-date-item"
+                        onClick={[Function]}
+                    >
+                        <div>
+                            Thu
+                        </div>
+                        <div>
+                            21
+                        </div>
                     </div>
-                    <div>
-                        21
+                    <div
+                        className="booking-date-item"
+                        onClick={[Function]}
+                    >
+                        <div>
+                            Fri
+                        </div>
+                        <div>
+                            22
+                        </div>
                     </div>
-                </div>
-                <div
-                    className="booking-date-item"
-                    onClick={[Function]}
-                >
-                    <div>
-                        Fri
+                    <div
+                        className="booking-date-item"
+                        onClick={[Function]}
+                    >
+                        <div>
+                            Sat
+                        </div>
+                        <div>
+                            23
+                        </div>
                     </div>
-                    <div>
-                        22
+                    <div
+                        className="booking-date-item"
+                        onClick={[Function]}
+                    >
+                        <div>
+                            Sun
+                        </div>
+                        <div>
+                            24
+                        </div>
                     </div>
-                </div>
-                <div
-                    className="booking-date-item"
-                    onClick={[Function]}
-                >
-                    <div>
-                        Sat
+                    <div
+                        className="booking-date-item"
+                        onClick={[Function]}
+                    >
+                        <div>
+                            Mon
+                        </div>
+                        <div>
+                            25
+                        </div>
                     </div>
-                    <div>
-                        23
-                    </div>
-                </div>
-                <div
-                    className="booking-date-item"
-                    onClick={[Function]}
-                >
-                    <div>
-                        Sun
-                    </div>
-                    <div>
-                        24
-                    </div>
-                </div>
-                <div
-                    className="booking-date-item"
-                    onClick={[Function]}
-                >
-                    <div>
-                        Mon
-                    </div>
-                    <div>
-                        25
-                    </div>
-                </div>
-                <div
-                    className="booking-date-item"
-                    onClick={[Function]}
-                >
-                    <div>
-                        Tue
-                    </div>
-                    <div>
-                        26
+                    <div
+                        className="booking-date-item"
+                        onClick={[Function]}
+                    >
+                        <div>
+                            Tue
+                        </div>
+                        <div>
+                            26
+                        </div>
                     </div>
                 </div>
             </div>
@@ -179,92 +181,94 @@ Array [
               }
         }
     >
-        <div
-            className="book-ticket-wrapper"
-        >
+        <div>
             <div
-                className="booking-dates-wrapper"
+                className="book-ticket-wrapper"
             >
                 <div
-                    className="booking-date-item booking-date-label"
+                    className="booking-dates-wrapper"
                 >
-                    Date :
-                </div>
-                <div
-                    className="booking-date-item"
-                    onClick={[Function]}
-                >
-                    <div>
-                        Wed
+                    <div
+                        className="booking-date-item booking-date-label"
+                    >
+                        Date :
                     </div>
-                    <div>
-                        20
+                    <div
+                        className="booking-date-item"
+                        onClick={[Function]}
+                    >
+                        <div>
+                            Wed
+                        </div>
+                        <div>
+                            20
+                        </div>
                     </div>
-                </div>
-                <div
-                    className="booking-date-item"
-                    onClick={[Function]}
-                >
-                    <div>
-                        Thu
+                    <div
+                        className="booking-date-item"
+                        onClick={[Function]}
+                    >
+                        <div>
+                            Thu
+                        </div>
+                        <div>
+                            21
+                        </div>
                     </div>
-                    <div>
-                        21
+                    <div
+                        className="booking-date-item"
+                        onClick={[Function]}
+                    >
+                        <div>
+                            Fri
+                        </div>
+                        <div>
+                            22
+                        </div>
                     </div>
-                </div>
-                <div
-                    className="booking-date-item"
-                    onClick={[Function]}
-                >
-                    <div>
-                        Fri
+                    <div
+                        className="booking-date-item"
+                        onClick={[Function]}
+                    >
+                        <div>
+                            Sat
+                        </div>
+                        <div>
+                            23
+                        </div>
                     </div>
-                    <div>
-                        22
+                    <div
+                        className="booking-date-item"
+                        onClick={[Function]}
+                    >
+                        <div>
+                            Sun
+                        </div>
+                        <div>
+                            24
+                        </div>
                     </div>
-                </div>
-                <div
-                    className="booking-date-item"
-                    onClick={[Function]}
-                >
-                    <div>
-                        Sat
+                    <div
+                        className="booking-date-item"
+                        onClick={[Function]}
+                    >
+                        <div>
+                            Mon
+                        </div>
+                        <div>
+                            25
+                        </div>
                     </div>
-                    <div>
-                        23
-                    </div>
-                </div>
-                <div
-                    className="booking-date-item"
-                    onClick={[Function]}
-                >
-                    <div>
-                        Sun
-                    </div>
-                    <div>
-                        24
-                    </div>
-                </div>
-                <div
-                    className="booking-date-item"
-                    onClick={[Function]}
-                >
-                    <div>
-                        Mon
-                    </div>
-                    <div>
-                        25
-                    </div>
-                </div>
-                <div
-                    className="booking-date-item"
-                    onClick={[Function]}
-                >
-                    <div>
-                        Tue
-                    </div>
-                    <div>
-                        26
+                    <div
+                        className="booking-date-item"
+                        onClick={[Function]}
+                    >
+                        <div>
+                            Tue
+                        </div>
+                        <div>
+                            26
+                        </div>
                     </div>
                 </div>
             </div>
