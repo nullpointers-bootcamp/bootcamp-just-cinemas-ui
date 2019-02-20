@@ -4,6 +4,8 @@ export const FETCH_MOVIES_PROGRESS = "FETCH_MOVIES_PROGRESS";
 export const FETCH_MOVIES_SUCCESS = "FETCH_MOVIES_SUCCESS";
 export const FETCH_MOVIES_FAILURE = "FETCH_MOVIES_FAILURE";
 export const FETCH_MOVIE_DETAIL_SUCCESS = "FETCH_MOVIE_DETAIL_SUCCESS";
+export const FETCH_SHOW_INFORMATION_SUCCESS = "FETCH_SHOW_INFORMATION_SUCCESS";
+export const SET_BOOKING_DATE = "SET_BOOKING_DATE";
 
 const fetchMoviesInProgress = {
   type: FETCH_MOVIES_PROGRESS
@@ -57,6 +59,29 @@ export const fetchMovieDetail = movieId => {
     //   }
     // };
     dispatch(movieDetailFetched(movie.data));
+  };
+};
+
+const setDate = date => {
+  return {
+    type: SET_BOOKING_DATE,
+    payload: date
+  };
+};
+
+const showInformationFetched = data => {
+  return {
+    type: FETCH_SHOW_INFORMATION_SUCCESS,
+    payload: data
+  };
+};
+export const fetchShowInformation = (date, movieId) => {
+  return async dispatch => {
+    dispatch(setDate(date));
+    const showInformation = await axios.get(
+      `http://localhost:9090/shows/show-information/?date=${date}&movieId=${movieId}`
+    );
+    dispatch(showInformationFetched(showInformation.data));
   };
 };
 export default fetchMovies;

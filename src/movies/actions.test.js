@@ -3,13 +3,16 @@ import fetchMovies, {
   FETCH_MOVIES_SUCCESS,
   FETCH_MOVIES_FAILURE,
   FETCH_MOVIE_DETAIL_SUCCESS,
-  fetchMovieDetail
+  fetchMovieDetail,
+  FETCH_SHOW_INFORMATION_SUCCESS,
+  SET_BOOKING_DATE,
+  fetchShowInformation
 } from "../movies/actions";
 import MockAdapter from "axios-mock-adapter";
 import thunk from "redux-thunk";
 import configureMockStore from "redux-mock-store";
 import axios from "axios";
-import { movieDetail, movieItems } from "./mock-data";
+import { movieDetail, movieItems, showInformation } from "./mock-data";
 
 const mockStore = configureMockStore([thunk]);
 const mock = new MockAdapter(axios);
@@ -49,6 +52,25 @@ describe("movies/actions", () => {
       expect(store.getActions()[0]).toEqual({
         type: FETCH_MOVIE_DETAIL_SUCCESS,
         payload: movieDetail
+      });
+    });
+  });
+
+  it("should fetch show information by date and movie id and return FETCH_SHOW_INFORMATION_SUCCESS", async () => {
+    mock
+      .onGet(
+        "http://localhost:9090/shows/show-information/?date=2019-02-14&movieId=1"
+      )
+      .reply(200, showInformation);
+
+    store.dispatch(fetchShowInformation("2019-02-14", 1)).then(() => {
+      expect(store.getActions()[0]).toEqual({
+        type: SET_BOOKING_DATE,
+        payload: "2019-02-14"
+      });
+      expect(store.getActions()[1]).toEqual({
+        type: FETCH_SHOW_INFORMATION_SUCCESS,
+        payload: showInformation
       });
     });
   });

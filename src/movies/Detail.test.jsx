@@ -9,14 +9,28 @@ configure({ adapter: new Adapter() });
 
 it("show movie detail information", () => {
   const tree = renderer
-    .create(<Detail movie={movieDetail} id={1} fetchMovieDetail={() => {}} />)
+    .create(
+      <Detail
+        movie={movieDetail}
+        id={"1"}
+        fetchMovieDetail={() => {}}
+        fetchShowInformation={() => {}}
+        bookingDate={""}
+      />
+    )
     .toJSON();
   expect(tree).toMatchSnapshot();
 });
 
 it("should set show equal to true when openBookTickets called", () => {
   const wrapper = shallow(
-    <Detail movie={movieDetail} id={1} fetchMovieDetail={() => {}} />
+    <Detail
+      movie={movieDetail}
+      id={"1"}
+      fetchMovieDetail={() => {}}
+      fetchShowInformation={() => {}}
+      bookingDate={""}
+    />
   );
   wrapper.instance().openBookTickets();
   expect(wrapper.state().show).toEqual(true);
@@ -24,7 +38,13 @@ it("should set show equal to true when openBookTickets called", () => {
 
 it("should set show equal to false when closeBookTickets called", () => {
   const wrapper = shallow(
-    <Detail movie={movieDetail} id={1} fetchMovieDetail={() => {}} />
+    <Detail
+      movie={movieDetail}
+      id={"1"}
+      fetchMovieDetail={() => {}}
+      fetchShowInformation={() => {}}
+      bookingDate={""}
+    />
   );
   wrapper.instance().openBookTickets();
   wrapper.instance().closeBookTickets();

@@ -68,7 +68,10 @@ class Detail extends React.Component {
     if (!this.props.movie) {
       return <div>loading...</div>;
     }
-    const { name, imageName } = this.props.movie;
+    const {
+      movie: { name, imageName },
+      bookingDate
+    } = this.props;
     const imageUrl = `https://s3.ap-south-1.amazonaws.com/twspicinemas/banner/${imageName.toLowerCase()}.jpg`;
     return (
       <div>
@@ -80,6 +83,9 @@ class Detail extends React.Component {
         <BookTicketPopup
           show={this.state.show}
           onClose={this.closeBookTickets}
+          fetchShowInformation={this.props.fetchShowInformation}
+          movieId={this.props.id}
+          bookingDate={bookingDate}
         />
       </div>
     );
@@ -99,7 +105,9 @@ Detail.propTypes = {
     synopsis: PropTypes.string.isRequired
   }),
   fetchMovieDetail: PropTypes.func.isRequired,
-  id: PropTypes.number.isRequired
+  id: PropTypes.string.isRequired,
+  fetchShowInformation: PropTypes.func.isRequired,
+  bookingDate: PropTypes.string.isRequired
 };
 
 export default Detail;

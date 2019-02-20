@@ -17,3 +17,8 @@
   border: solid 2px purple;
   cursor: pointer;
 }
+
+.date-selected {
+  background-color: purple;
+  color: white;
+}

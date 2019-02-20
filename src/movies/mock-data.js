@@ -177,3 +177,15 @@ export const movieDetail = {
   synopsis:
     "A man attempts to protect his family from enemies, gained in his time as a gangster. After he is released from prison on false charges, he resumes his post as gang leader and continues a long-held rivalry."
 };
+
+export const showInformation = [
+  {
+    showId: 40,
+    date: "2019-02-14",
+    time: "09:00",
+    theatreId: 1,
+    theatreName: "PVR",
+    screenId: 1,
+    screenName: "Screen 1"
+  }
+];

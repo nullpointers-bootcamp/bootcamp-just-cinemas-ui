@@ -3,19 +3,41 @@ import Popup from "reactjs-popup";
 import PropTypes from "prop-types";
 import moment from "moment";
 import "./bookingTicketPopup.css";
+import cx from "classnames";
 
 class BookTicketPopup extends React.Component {
+  componentDidMount() {
+    this.props.fetchShowInformation(
+      moment().format("YYYY-MM-DD"),
+      this.props.movieId
+    );
+  }
+
+  fetchShowInformation = day => {
+    this.props.fetchShowInformation(day, this.props.movieId);
+  };
+
+  renderDate(day, index) {
+    return (
+      <div
+        key={index}
+        className={cx("booking-date-item", {
+          "date-selected": this.props.bookingDate === day
+        })}
+        onClick={() => this.fetchShowInformation(day)}
+      >
+        <div>{moment(day).format("ddd")}</div>
+        <div>{moment(day).format("DD")}</div>
+      </div>
+    );
+  }
+
   renderDates() {
-    const days = this.getNextNDaysFromGivenDate(Date.now(), 5);
+    const days = this.getNextNDaysFromGivenDate(Date.now(), 7);
     return (
       <div className="booking-dates-wrapper">
         <div className="booking-date-item booking-date-label">Date :</div>
-        {days.map((day, index) => (
-          <div key={index} className="booking-date-item">
-            <div>{moment(day).format("ddd")}</div>
-            <div>{moment(day).format("DD")}</div>
-          </div>
-        ))}
+        {days.map((day, index) => this.renderDate(day, index))}
       </div>
     );
   }
@@ -44,11 +66,16 @@ class BookTicketPopup extends React.Component {
 }
 
 BookTicketPopup.defaultProps = {
-  show: false
+  show: false,
+  movieId: null,
+  bookingDate: null
 };
 
 BookTicketPopup.propTypes = {
   show: PropTypes.bool.isRequired,
-  onClose: PropTypes.func.isRequired
+  onClose: PropTypes.func.isRequired,
+  fetchShowInformation: PropTypes.func.isRequired,
+  movieId: PropTypes.string.isRequired,
+  bookingDate: PropTypes.string.isRequired
 };
 export default BookTicketPopup;
