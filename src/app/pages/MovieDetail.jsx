@@ -10,7 +10,13 @@ import {
 class MovieDetail extends React.Component {
   render() {
     const {
-      movies: { detail, bookingDate, showInformation },
+      movies: {
+        detail,
+        bookingDate,
+        showInformation,
+        selectedShow,
+        seatInformation
+      },
       fetchMovieDetail,
       fetchShowInformation,
       fetchSeatInformation,
@@ -29,6 +35,8 @@ class MovieDetail extends React.Component {
           bookingDate={bookingDate}
           showInformation={showInformation}
           fetchSeatInformation={fetchSeatInformation}
+          selectedShow={selectedShow}
+          seatInformation={seatInformation}
         />
       </div>
     );

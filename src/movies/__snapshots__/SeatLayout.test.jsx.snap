@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`show seat layout 1`] = `
+<div>
+  <div>
+    Seats
+  </div>
+  <div
+    className="seats-wrapper"
+  >
+    <div
+      className="seats-row"
+    >
+      <div
+        className="seat seat-blocked"
+      >
+        A1
+      </div>
+      <div
+        className="seat"
+      >
+        A2
+      </div>
+      <div
+        className="seat"
+      >
+        A3
+      </div>
+    </div>
+    <div
+      className="seats-row"
+    >
+      <div
+        className="seat"
+      >
+        B1
+      </div>
+      <div
+        className="seat"
+      >
+        B2
+      </div>
+      <div
+        className="seat"
+      >
+        B3
+      </div>
+    </div>
+  </div>
+</div>
+`;

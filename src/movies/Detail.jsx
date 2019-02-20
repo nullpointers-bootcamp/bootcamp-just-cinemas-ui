@@ -74,7 +74,9 @@ class Detail extends React.Component {
       showInformation,
       fetchSeatInformation,
       fetchShowInformation,
-      id
+      id,
+      selectedShow,
+      seatInformation
     } = this.props;
     const imageUrl = `https://s3.ap-south-1.amazonaws.com/twspicinemas/banner/${imageName.toLowerCase()}.jpg`;
     return (
@@ -92,6 +94,8 @@ class Detail extends React.Component {
           bookingDate={bookingDate}
           showInformation={showInformation}
           fetchSeatInformation={fetchSeatInformation}
+          selectedShow={selectedShow}
+          seatInformation={seatInformation}
         />
       </div>
     );
@@ -115,7 +119,9 @@ Detail.propTypes = {
   fetchShowInformation: PropTypes.func.isRequired,
   bookingDate: PropTypes.string.isRequired,
   showInformation: PropTypes.array.isRequired,
-  fetchSeatInformation: PropTypes.func.isRequired
+  fetchSeatInformation: PropTypes.func.isRequired,
+  selectedShow: PropTypes.object.isRequired,
+  seatInformation: PropTypes.object.isRequired
 };
 
 export default Detail;

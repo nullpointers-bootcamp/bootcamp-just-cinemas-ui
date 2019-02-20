@@ -1,0 +1,23 @@
+.seats-wrapper {
+  height: 400px;
+  overflow-y: scroll;
+}
+.seats-row {
+  display: flex;
+  justify-content: center;
+}
+
+.seat {
+  padding: 5px;
+  border: solid 1px #000;
+  margin: 2px;
+  width: 80px;
+  align-self: center;
+  cursor: pointer;
+  justify-content: center;
+}
+
+.seat-blocked {
+  background: grey;
+  color: #fff;
+}

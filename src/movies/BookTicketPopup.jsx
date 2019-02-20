@@ -5,6 +5,7 @@ import moment from "moment";
 import "./bookingTicketPopup.css";
 import cx from "classnames";
 import ShowInformation from "./ShowInformation";
+import SeatLayout from "./SeatLayout";
 
 class BookTicketPopup extends React.Component {
   componentDidMount() {
@@ -56,23 +57,41 @@ class BookTicketPopup extends React.Component {
     return days;
   }
 
+  renderSelectedShowInformation() {
+    const {
+      selectedShow: { theatreName, screenName, time }
+    } = this.props;
+    return (
+      <div>
+        <p>
+          {theatreName} {screenName} {time}
+        </p>
+      </div>
+    );
+  }
   render() {
     const {
       show,
       onClose,
       bookingDate,
       showInformation,
-      fetchSeatInformation
+      fetchSeatInformation,
+      selectedShow,
+      seatInformation
     } = this.props;
     return (
       <Popup open={show} onClose={onClose}>
         <div>
           <div className="book-ticket-wrapper">{this.renderDates()}</div>
-          {bookingDate && showInformation.length ? (
+          {bookingDate && showInformation.length && !selectedShow ? (
             <ShowInformation
               shows={showInformation}
               fetchSeatInformation={fetchSeatInformation}
             />
+          ) : null}
+          {selectedShow ? this.renderSelectedShowInformation() : null}
+          {seatInformation ? (
+            <SeatLayout seatInformation={seatInformation} />
           ) : null}
         </div>
       </Popup>
@@ -94,6 +113,8 @@ BookTicketPopup.propTypes = {
   movieId: PropTypes.string.isRequired,
   bookingDate: PropTypes.string.isRequired,
   showInformation: PropTypes.array.isRequired,
-  fetchSeatInformation: PropTypes.func.isRequired
+  fetchSeatInformation: PropTypes.func.isRequired,
+  selectedShow: PropTypes.object.isRequired,
+  seatInformation: PropTypes.object.isRequired
 };
 export default BookTicketPopup;

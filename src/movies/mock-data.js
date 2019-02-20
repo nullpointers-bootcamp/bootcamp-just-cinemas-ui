@@ -191,7 +191,7 @@ export const showInformation = [
 ];
 
 export const seatInformation = {
-  noOfRows: 26,
-  noOfColumns: 10,
-  bookedSeats: []
+  noOfRows: 2,
+  noOfColumns: 3,
+  bookedSeats: ["A1"]
 };

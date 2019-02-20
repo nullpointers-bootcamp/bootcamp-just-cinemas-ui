@@ -134,6 +134,20 @@ Array [
                     </div>
                 </div>
             </div>
+            <div>
+                <p>
+                     
+                     
+                </p>
+            </div>
+            <div>
+                <div>
+                    Seats
+                </div>
+                <div
+                    className="seats-wrapper"
+                />
+            </div>
         </div>
     </div>
 </div>,
@@ -271,6 +285,20 @@ Array [
                         </div>
                     </div>
                 </div>
+            </div>
+            <div>
+                <p>
+                     
+                     
+                </p>
+            </div>
+            <div>
+                <div>
+                    Seats
+                </div>
+                <div
+                    className="seats-wrapper"
+                />
             </div>
         </div>
     </div>
