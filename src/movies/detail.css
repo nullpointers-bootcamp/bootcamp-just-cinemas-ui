@@ -17,3 +17,9 @@
   color: purple;
   font-weight: 600;
 }
+
+.book-button {
+  background-color: purple;
+  background-image: none;
+  margin: 5px;
+}

@@ -1,0 +1,19 @@
+.booking-dates-wrapper {
+  display: flex;
+}
+
+.booking-date-label {
+  border: none !important;
+  cursor: auto !important;
+}
+
+.booking-date-item {
+  display: flex;
+  padding: 15px;
+  flex-direction: column;
+  justify-content: center;
+  margin: 10px;
+  width: 70px;
+  border: solid 2px purple;
+  cursor: pointer;
+}

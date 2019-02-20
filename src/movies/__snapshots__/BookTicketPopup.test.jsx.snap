@@ -1,0 +1,112 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should hide the movie ticket pop  1`] = `null`;
+
+exports[`should show the movie ticket pop  1`] = `
+Array [
+  <div
+    style={
+        Object {
+            "left": "0px",
+            "position": "absolute",
+            "top": "0px",
+          }
+    }
+/>,
+  <div
+    className="popup-overlay"
+    onClick={[Function]}
+    style={
+        Object {
+            "background": "rgba(0, 0, 0,0.5)",
+            "bottom": "0",
+            "display": "flex",
+            "left": "0",
+            "position": "fixed",
+            "right": "0",
+            "top": "0",
+            "zIndex": "999",
+          }
+    }
+>
+    <div
+        className="popup-content "
+        onClick={[Function]}
+        style={
+            Object {
+                "background": "rgb(255, 255, 255)",
+                "border": "1px solid rgb(187, 187, 187)",
+                "margin": "auto",
+                "padding": "5px",
+                "position": "relative",
+                "width": "50%",
+              }
+        }
+    >
+        <div
+            className="book-ticket-wrapper"
+        >
+            <div
+                className="booking-dates-wrapper"
+            >
+                <div
+                    className="booking-date-item booking-date-label"
+                >
+                    Date :
+                </div>
+                <div
+                    className="booking-date-item"
+                >
+                    <div>
+                        Wed
+                    </div>
+                    <div>
+                        20
+                    </div>
+                </div>
+                <div
+                    className="booking-date-item"
+                >
+                    <div>
+                        Thu
+                    </div>
+                    <div>
+                        21
+                    </div>
+                </div>
+                <div
+                    className="booking-date-item"
+                >
+                    <div>
+                        Fri
+                    </div>
+                    <div>
+                        22
+                    </div>
+                </div>
+                <div
+                    className="booking-date-item"
+                >
+                    <div>
+                        Sat
+                    </div>
+                    <div>
+                        23
+                    </div>
+                </div>
+                <div
+                    className="booking-date-item"
+                >
+                    <div>
+                        Sun
+                    </div>
+                    <div>
+                        24
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>,
+]
+`;

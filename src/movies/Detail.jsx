@@ -1,8 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
+import BookTicketPopup from "./BookTicketPopup";
 
 import "./detail.css";
 class Detail extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      show: false
+    };
+  }
   componentDidMount() {
     this.props.fetchMovieDetail(this.props.id);
   }
@@ -35,6 +42,28 @@ class Detail extends React.Component {
       </div>
     );
   }
+  renderBookButton() {
+    return (
+      <div onClick={this.openBookTickets}>
+        <button className="btn btn-primary pull-right book-button">
+          Book Ticket
+        </button>
+      </div>
+    );
+  }
+
+  openBookTickets = () => {
+    this.setState({
+      show: true
+    });
+  };
+
+  closeBookTickets = () => {
+    this.setState({
+      show: false
+    });
+  };
+
   render() {
     if (!this.props.movie) {
       return <div>loading...</div>;
@@ -45,8 +74,13 @@ class Detail extends React.Component {
       <div>
         <h1 className="name">{name}</h1>
         <img className="banner" alt={name} src={imageUrl} />
+        {this.renderBookButton()}
         {this.renderSynopsis()}
         {this.renderStills()}
+        <BookTicketPopup
+          show={this.state.show}
+          onClose={this.closeBookTickets}
+        />
       </div>
     );
   }
