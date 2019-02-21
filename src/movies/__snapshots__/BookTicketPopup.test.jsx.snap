@@ -60,17 +60,6 @@ Array [
                         onClick={[Function]}
                     >
                         <div>
-                            Wed
-                        </div>
-                        <div>
-                            20
-                        </div>
-                    </div>
-                    <div
-                        className="booking-date-item"
-                        onClick={[Function]}
-                    >
-                        <div>
                             Thu
                         </div>
                         <div>
@@ -130,6 +119,17 @@ Array [
                         </div>
                         <div>
                             26
+                        </div>
+                    </div>
+                    <div
+                        className="booking-date-item"
+                        onClick={[Function]}
+                    >
+                        <div>
+                            Wed
+                        </div>
+                        <div>
+                            27
                         </div>
                     </div>
                 </div>
@@ -212,17 +212,6 @@ Array [
                         onClick={[Function]}
                     >
                         <div>
-                            Wed
-                        </div>
-                        <div>
-                            20
-                        </div>
-                    </div>
-                    <div
-                        className="booking-date-item"
-                        onClick={[Function]}
-                    >
-                        <div>
                             Thu
                         </div>
                         <div>
@@ -282,6 +271,17 @@ Array [
                         </div>
                         <div>
                             26
+                        </div>
+                    </div>
+                    <div
+                        className="booking-date-item"
+                        onClick={[Function]}
+                    >
+                        <div>
+                            Wed
+                        </div>
+                        <div>
+                            27
                         </div>
                     </div>
                 </div>
