@@ -3,7 +3,7 @@ environments:
   ci:
     pipelines:
       - "team1UI"
-      
+
 pipelines:
   "team1UI":
     group: team1
@@ -28,13 +28,4 @@ pipelines:
               tasks:
                 - script: |
                     yarn install
-                    REACT_APP_API_URL="http://localhost:9090" yarn run build              
-
-      - deploy:
-           jobs:
-            deploy:
-              resources:
-                - node-and-java
-              tasks:
-                - script: |
-                    sh ./buildAndDeploy/deploy.sh team1-bootcamp-march2018
+                    REACT_APP_API_URL="http://localhost:9090" yarn run build
