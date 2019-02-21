@@ -14,9 +14,9 @@ To run your project
 To run tests for your project  
 `yarn run test`
 
-To run tests in watch mode
+The tests will be started in the 'watch mode'. Everytime you make a change to any file in your project, the tests will be run. To run tests in watch mode
+
 `yarn run test-watch`
-The tests will be started in the 'watch mode'. Everytime you make a change to any file in your project, the tests will be run.
 
 To run and lint  
 `yarn run lint`
