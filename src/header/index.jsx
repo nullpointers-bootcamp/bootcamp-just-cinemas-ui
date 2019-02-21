@@ -1,16 +1,41 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "./header.css";
+import { Link } from "react-router-dom";
+import SocialMedia from "./SocialMedia";
 
-const Header = () => (
-  <Link to="/">
-    <img
-      className="logo"
-      src="https://drive.google.com/uc?export=view&id=1d3o9sOOiobgOEh7HWiCJBOHKTsmXopTX"
-      alt="just cinemas"
-    />
-  </Link>
-);
+class Header extends React.Component {
+  renderLogo(){
+    return (
+      <Link to="/">
+        <img
+            className="logo"
+            src="https://s3.ap-south-1.amazonaws.com/twspicinemas/assets/logo.png"
+            alt="just cinemas"
+        />
+    </Link>
+    );
+  }
+
+  renderSocialMediaLinks(){
+    return (
+      <div className="row social-media-container">
+        <div className="follow-us" >Follow Us</div>
+        <SocialMedia href="https://www.facebook.com/ThoughtWorks/" src="https://s3.ap-south-1.amazonaws.com/twspicinemas/assets/fb_icon.gif" ></SocialMedia>
+        <SocialMedia href="https://twitter.com/thoughtworks" src="https://s3.ap-south-1.amazonaws.com/twspicinemas/assets/twitter_icon.png" ></SocialMedia>
+    </div>
+    );
+  }
+  
+  render(){
+    return (
+      <div className="row">
+      <div className="col col-xs-10">{this.renderLogo()}</div> 
+      <div className="col col-xs-2">{this.renderSocialMediaLinks()}</div>
+      </div>
+    );
+  }
+}
+
 
 Header.defaultProps = {};
 
