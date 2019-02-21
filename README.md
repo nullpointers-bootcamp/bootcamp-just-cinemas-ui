@@ -2,15 +2,33 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Just Cinemas UI
 
+To Clone the Project
+`git clone https://github.com/nullpointers-bootcamp/bootcamp-just-cinemas-ui.git`
+
+To install project dependencies
+`yarn install`
+
 To run your project  
 `yarn start`
 
 To run tests for your project  
-`yarn run test`  
+`yarn run test`
+
+To run tests in watch mode
+`yarn run test-watch`
 The tests will be started in the 'watch mode'. Everytime you make a change to any file in your project, the tests will be run.
+
+To run and lint  
+`yarn run lint`
 
 To add a dependency to your project  
 `yarn add <dep name>`
+
+To add a dev dependency to your project  
+`yarn add --dev <dep name>`
+
+To remove a dependency to your project  
+`yarn remove <dep name>`
 
 ## Follow the below steps to deploy it
 
