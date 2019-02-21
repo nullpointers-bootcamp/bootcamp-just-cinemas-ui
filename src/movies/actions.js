@@ -12,9 +12,15 @@ export const SELECT_SEAT = "SELECT_SEAT";
 export const FETCH_TICKET_INFORMATION_SUCCESS =
   "FETCH_TICKET_INFORMATION_SUCCESS";
 export const CLEAR_DATA = "CLEAR_DATA";
+export const FETCH_UPCOMING_MOVIES_PROGRESS = "FETCH_UPCOMING_MOVIES_PROGRESS";
+export const FETCH_UPCOMING_MOVIES_SUCCESS = "FETCH_UPCOMING_MOVIES_SUCCESS";
+export const FETCH_UPCOMING_MOVIES_FAILURE = "FETCH_UPCOMING_MOVIES_FAILURE";
 
 const fetchMoviesInProgress = {
   type: FETCH_MOVIES_PROGRESS
+};
+const fetchUpComingMoviesInProgress = {
+  type: FETCH_UPCOMING_MOVIES_PROGRESS
 };
 
 const movieDataFetched = data => ({
@@ -22,10 +28,21 @@ const movieDataFetched = data => ({
   payload: data
 });
 
+const upComingMovieDataFetched = data => ({
+  type: FETCH_UPCOMING_MOVIES_SUCCESS,
+  payload: data
+});
+
 const ticketDataFetched = data => ({
   type: FETCH_TICKET_INFORMATION_SUCCESS,
   payload: data
 });
+
+const upcomingMovieDataFetchFailure = error => ({
+  type: FETCH_UPCOMING_MOVIES_FAILURE,
+  payload: error
+});
+
 const movieDetailFetched = data => ({
   type: FETCH_MOVIE_DETAIL_SUCCESS,
   payload: data
@@ -34,18 +51,13 @@ const movieDataFetchFailure = {
   type: FETCH_MOVIES_FAILURE
 };
 
-const fetchMovies = () => {
+export const fetchMovies = () => {
   return async dispatch => {
     dispatch(fetchMoviesInProgress);
     try {
       const movies = await axios.get(
         "http://localhost:9090/movies/now-showing"
       );
-      // const movies = {data: [{
-      //   id: 'asfasdfas',
-      //   name: 'Kabali',
-      //   experience: 'asfasdfag',
-      // }]}
 
       dispatch(movieDataFetched(movies.data));
     } catch (error) {
@@ -142,5 +154,18 @@ export const createTicket = (showId, seatNumbers, emailId) => {
 
 export const clearData = () => {
   return { type: CLEAR_DATA };
+};
+
+export const fetchUpComingMovies = () => {
+  return async dispatch => {
+    dispatch(fetchUpComingMoviesInProgress);
+    try {
+      const movies = await axios.get("http://localhost:9090/movies/upcoming");
+
+      dispatch(upComingMovieDataFetched(movies.data));
+    } catch (error) {
+      dispatch(upcomingMovieDataFetchFailure);
+    }
+  };
 };
 export default fetchMovies;

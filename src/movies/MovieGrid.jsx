@@ -9,19 +9,17 @@ class MovieGrid extends Component {
   }
 
   render() {
-    if (this.props.movies.fetching) {
+    if (this.props.fetching) {
       return this.showProgress();
     }
 
-    return this.props.movies.error || false
-      ? this.showError()
-      : this.showMovies();
+    return this.props.error || false ? this.showError() : this.showMovies();
   }
 
   showMovies() {
     return (
       <div className="movie-list-container">
-        {this.props.movies.items.map(({ name, imageName, id, experiences }) => (
+        {this.props.movies.map(({ name, imageName, id, experiences }) => (
           <MovieItem
             key={name}
             name={name}
@@ -52,12 +50,10 @@ MovieGrid.defaultProps = {
 };
 
 MovieGrid.propTypes = {
-  movies: PropTypes.shape({
-    items: PropTypes.array,
-    fetching: PropTypes.bool.isRequired,
-    error: PropTypes.string
-  }),
-  fetchMovies: PropTypes.func.isRequired
+  fetchMovies: PropTypes.func.isRequired,
+  movies: PropTypes.array,
+  fetching: PropTypes.bool.isRequired,
+  error: PropTypes.string
 };
 
 export default MovieGrid;

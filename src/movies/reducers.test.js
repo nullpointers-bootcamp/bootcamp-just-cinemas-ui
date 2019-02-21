@@ -10,6 +10,8 @@ import {
   FETCH_SEAT_INFORMATION_SUCCESS,
   SELECT_SEAT,
   FETCH_TICKET_INFORMATION_SUCCESS,
+  FETCH_UPCOMING_MOVIES_SUCCESS,
+  FETCH_UPCOMING_MOVIES_PROGRESS,
   CLEAR_DATA
 } from "./actions";
 import {
@@ -180,6 +182,29 @@ it("should remove seats when seat is blocked", () => {
     ticketInformation: null
   };
   const actual = reducer({}, { type: CLEAR_DATA });
+
+  expect(actual).toEqual(expectedState);
+});
+it("should assign upcoming movies", () => {
+  const expectedState = {
+    upComingMovies: movieItems,
+    upComingMoviesFetching: false
+  };
+
+  const actual = reducer(
+    {},
+    { type: FETCH_UPCOMING_MOVIES_SUCCESS, payload: movieItems }
+  );
+
+  expect(actual).toEqual(expectedState);
+});
+
+it("should assign upcoming movies fetching", () => {
+  const expectedState = {
+    upComingMoviesFetching: true
+  };
+
+  const actual = reducer({}, { type: FETCH_UPCOMING_MOVIES_PROGRESS });
 
   expect(actual).toEqual(expectedState);
 });

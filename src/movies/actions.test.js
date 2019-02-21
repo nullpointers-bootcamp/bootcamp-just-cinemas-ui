@@ -1,4 +1,4 @@
-import fetchMovies, {
+import {
   FETCH_MOVIES_PROGRESS,
   FETCH_MOVIES_SUCCESS,
   FETCH_MOVIES_FAILURE,
@@ -11,7 +11,11 @@ import fetchMovies, {
   fetchSeatInformation,
   FETCH_SEAT_INFORMATION_SUCCESS,
   FETCH_TICKET_INFORMATION_SUCCESS,
-  createTicket
+  FETCH_UPCOMING_MOVIES_SUCCESS,
+  FETCH_UPCOMING_MOVIES_PROGRESS,
+  createTicket,
+  fetchUpComingMovies,
+  fetchMovies
 } from "../movies/actions";
 import MockAdapter from "axios-mock-adapter";
 import thunk from "redux-thunk";
@@ -43,6 +47,20 @@ describe("movies/actions", () => {
       expect(store.getActions()[0]).toEqual({ type: FETCH_MOVIES_PROGRESS });
       expect(store.getActions()[1]).toEqual({
         type: FETCH_MOVIES_SUCCESS,
+        payload: movieItems
+      });
+    });
+  });
+
+  it("should fetch movies from server which are upcoming and return FETCH_UPCOMING_MOVIES_SUCCESS", async () => {
+    mock.onGet("http://localhost:9090/movies/upcoming").reply(200, movieItems);
+
+    store.dispatch(fetchUpComingMovies()).then(() => {
+      expect(store.getActions()[0]).toEqual({
+        type: FETCH_UPCOMING_MOVIES_PROGRESS
+      });
+      expect(store.getActions()[1]).toEqual({
+        type: FETCH_UPCOMING_MOVIES_SUCCESS,
         payload: movieItems
       });
     });

@@ -9,7 +9,9 @@ import {
   SET_SELECTED_SHOW,
   SELECT_SEAT,
   FETCH_TICKET_INFORMATION_SUCCESS,
-  CLEAR_DATA
+  CLEAR_DATA,
+  FETCH_UPCOMING_MOVIES_SUCCESS,
+  FETCH_UPCOMING_MOVIES_PROGRESS
 } from "./actions";
 
 const reducer = (
@@ -22,7 +24,9 @@ const reducer = (
     selectedShow: null,
     seatInformation: null,
     selectedSeats: [],
-    ticketInformation: null
+    ticketInformation: null,
+    upComingMovies: [],
+    upComingMoviesFetching: false
   },
   action
 ) => {
@@ -79,6 +83,17 @@ const reducer = (
         seatInformation: null,
         selectedSeats: [],
         ticketInformation: null
+      };
+    case FETCH_UPCOMING_MOVIES_SUCCESS:
+      return {
+        ...state,
+        upComingMovies: action.payload,
+        upComingMoviesFetching: false
+      };
+    case FETCH_UPCOMING_MOVIES_PROGRESS:
+      return {
+        ...state,
+        upComingMoviesFetching: true
       };
     default:
       return { ...state };
