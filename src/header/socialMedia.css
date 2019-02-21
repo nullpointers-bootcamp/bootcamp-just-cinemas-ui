@@ -1,11 +1,16 @@
 .follow-us {
-  padding-left: 2px;
-  float: left;
+  margin: 10px;
 }
 
 .social-media {
   width: 2.5rem;
-  height: 2rem;
-  padding-left: 5px;
-  float: left;
+  align-self: center;
+  margin: 5px;
+}
+
+.social-media-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 0.5px;
 }
