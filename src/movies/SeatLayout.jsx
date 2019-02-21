@@ -23,19 +23,24 @@ class SeatLayout extends React.Component {
 
   render() {
     const {
-      seatInformation: { bookedSeats }
+      seatInformation: { bookedSeats },
+      selectSeat,
+      selectedSeats
     } = this.props;
     return (
       <div>
-        <div>Seats</div>
         <div className="seats-wrapper">
           {this.getAllSeats().map((seatRow, index) => (
             <div key={index} className="seats-row">
               {seatRow.map((seat, key) => (
                 <div
                   key={key}
+                  onClick={() =>
+                    !bookedSeats.includes(seat) && selectSeat(seat)
+                  }
                   className={cx("seat", {
-                    "seat-blocked": bookedSeats.includes(seat)
+                    "seat-blocked": bookedSeats.includes(seat),
+                    "seat-selected": selectedSeats.includes(seat)
                   })}
                 >
                   {seat}
@@ -54,7 +59,9 @@ SeatLayout.defaultProps = {
 };
 
 SeatLayout.propTypes = {
-  seatInformation: PropTypes.object.isRequired
+  seatInformation: PropTypes.object.isRequired,
+  selectSeat: PropTypes.func.isRequired,
+  selectedSeats: PropTypes.array.isRequired
 };
 
 export default SeatLayout;

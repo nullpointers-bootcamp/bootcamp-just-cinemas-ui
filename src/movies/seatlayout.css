@@ -21,3 +21,8 @@
   background: grey;
   color: #fff;
 }
+
+.seat-selected {
+  background: green;
+  color: #fff;
+}

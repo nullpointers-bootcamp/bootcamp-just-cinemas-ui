@@ -9,13 +9,25 @@ import Adapter from "enzyme-adapter-react-16";
 configure({ adapter: new Adapter() });
 it("show seat layout", () => {
   const tree = renderer
-    .create(<SeatLayout seatInformation={seatInformation} />)
+    .create(
+      <SeatLayout
+        seatInformation={seatInformation}
+        selectedSeats={[]}
+        selectSeat={() => {}}
+      />
+    )
     .toJSON();
   expect(tree).toMatchSnapshot();
 });
 
 it("get total seats based on the row and column", () => {
-  const wrapper = shallow(<SeatLayout seatInformation={seatInformation} />);
+  const wrapper = shallow(
+    <SeatLayout
+      seatInformation={seatInformation}
+      selectedSeats={[]}
+      selectSeat={() => {}}
+    />
+  );
   expect(wrapper.instance().getAllSeats()).toEqual([
     ["A1", "A2", "A3"],
     ["B1", "B2", "B3"]

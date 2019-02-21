@@ -4,7 +4,10 @@ import { connect } from "react-redux";
 import {
   fetchMovieDetail,
   fetchShowInformation,
-  fetchSeatInformation
+  fetchSeatInformation,
+  selectSeat,
+  createTicket,
+  clearData
 } from "../../movies/actions";
 
 class MovieDetail extends React.Component {
@@ -15,11 +18,16 @@ class MovieDetail extends React.Component {
         bookingDate,
         showInformation,
         selectedShow,
-        seatInformation
+        seatInformation,
+        selectedSeats,
+        ticketInformation
       },
       fetchMovieDetail,
       fetchShowInformation,
       fetchSeatInformation,
+      selectSeat,
+      createTicket,
+      clearData,
       match: {
         params: { id }
       }
@@ -37,6 +45,11 @@ class MovieDetail extends React.Component {
           fetchSeatInformation={fetchSeatInformation}
           selectedShow={selectedShow}
           seatInformation={seatInformation}
+          selectSeat={selectSeat}
+          selectedSeats={selectedSeats}
+          createTicket={createTicket}
+          ticketInformation={ticketInformation}
+          clearData={clearData}
         />
       </div>
     );
@@ -51,6 +64,10 @@ export default connect(
     fetchMovieDetail: movieId => dispatch(fetchMovieDetail(movieId)),
     fetchShowInformation: (date, movieId) =>
       dispatch(fetchShowInformation(date, movieId)),
-    fetchSeatInformation: show => dispatch(fetchSeatInformation(show))
+    fetchSeatInformation: show => dispatch(fetchSeatInformation(show)),
+    selectSeat: seat => dispatch(selectSeat(seat)),
+    createTicket: (showId, seatNumbers, emailId) =>
+      dispatch(createTicket(showId, seatNumbers, emailId)),
+    clearData: () => dispatch(clearData())
   })
 )(MovieDetail);

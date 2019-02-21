@@ -1,0 +1,107 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should show the movie ticket pop  1`] = `
+<div
+  className="booking-summary-wrapper"
+>
+  <h1>
+    Booking 
+    Confirmed
+  </h1>
+  <div
+    className="booking-summary"
+  >
+    <div
+      className="item"
+    >
+      <div
+        className="label-item"
+      >
+        Movie
+        <div
+          className="value"
+        >
+           
+          test movie
+           
+        </div>
+      </div>
+    </div>
+    <div
+      className="item"
+    >
+      <span
+        className="label-item"
+      >
+        Cinema
+        <div
+          className="value"
+        >
+           
+          test
+           
+        </div>
+      </span>
+    </div>
+    <div
+      className="item"
+    >
+      <span
+        className="label-item"
+      >
+        Screen
+        <div
+          className="value"
+        >
+           
+          screenName
+           
+        </div>
+      </span>
+    </div>
+    <div
+      className="item"
+    >
+      <span
+        className="label-item"
+      >
+        Time
+        <div
+          className="value"
+        >
+           
+          9:00
+           
+        </div>
+      </span>
+    </div>
+  </div>
+  <div
+    className="booking-seats"
+  >
+    Seats: 
+    <span
+      className="seats-value"
+    >
+      A1, A2
+    </span>
+  </div>
+  <div
+    className="ticket-wrapper"
+  >
+    <div
+      className="booking-success"
+    >
+      Booking successful
+    </div>
+    <div
+      className="ticket-id-label"
+    >
+      TICKET ID
+    </div>
+    <div
+      className="ticket-id-value"
+    />
+  </div>
+</div>
+`;

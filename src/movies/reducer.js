@@ -6,7 +6,10 @@ import {
   SET_BOOKING_DATE,
   FETCH_SHOW_INFORMATION_SUCCESS,
   FETCH_SEAT_INFORMATION_SUCCESS,
-  SET_SELECTED_SHOW
+  SET_SELECTED_SHOW,
+  SELECT_SEAT,
+  FETCH_TICKET_INFORMATION_SUCCESS,
+  CLEAR_DATA
 } from "./actions";
 
 const reducer = (
@@ -17,7 +20,9 @@ const reducer = (
     bookingDate: null,
     showInformation: [],
     selectedShow: null,
-    seatInformation: null
+    seatInformation: null,
+    selectedSeats: [],
+    ticketInformation: null
   },
   action
 ) => {
@@ -31,13 +36,50 @@ const reducer = (
     case FETCH_MOVIE_DETAIL_SUCCESS:
       return { ...state, detail: action.payload };
     case SET_BOOKING_DATE:
-      return { ...state, bookingDate: action.payload };
+      return {
+        ...state,
+        bookingDate: action.payload,
+        selectedShow: null,
+        seatInformation: null,
+        selectedSeats: []
+      };
     case FETCH_SHOW_INFORMATION_SUCCESS:
       return { ...state, showInformation: action.payload };
     case SET_SELECTED_SHOW:
-      return { ...state, selectedShow: action.payload };
+      return {
+        ...state,
+        selectedShow: action.payload,
+        seatInformation: null,
+        selectedSeats: []
+      };
     case FETCH_SEAT_INFORMATION_SUCCESS:
       return { ...state, seatInformation: action.payload };
+    case SELECT_SEAT:
+      if (state.selectedSeats.includes(action.payload)) {
+        return {
+          ...state,
+          selectedSeats: [
+            ...state.selectedSeats.filter(seat => seat !== action.payload)
+          ]
+        };
+      } else {
+        return {
+          ...state,
+          selectedSeats: [...state.selectedSeats, action.payload]
+        };
+      }
+    case FETCH_TICKET_INFORMATION_SUCCESS:
+      return { ...state, ticketInformation: action.payload };
+    case CLEAR_DATA:
+      return {
+        ...state,
+        bookingDate: null,
+        showInformation: [],
+        selectedShow: null,
+        seatInformation: null,
+        selectedSeats: [],
+        ticketInformation: null
+      };
     default:
       return { ...state };
   }

@@ -1,5 +1,6 @@
 .booking-dates-wrapper {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .booking-date-label {
@@ -21,4 +22,25 @@
 .date-selected {
   background-color: purple;
   color: white;
+}
+
+.selected-show {
+  display: flex;
+  justify-content: center;
+}
+
+.selected-show-information {
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.popup-footer {
+  margin-top: 1%;
+}
+
+.selected-seats {
+  font-size: 15px;
+  font-weight: 900;
+  margin-top: 2%;
+  margin-left: 1%;
 }

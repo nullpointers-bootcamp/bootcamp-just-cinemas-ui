@@ -8,6 +8,10 @@ export const FETCH_SHOW_INFORMATION_SUCCESS = "FETCH_SHOW_INFORMATION_SUCCESS";
 export const SET_BOOKING_DATE = "SET_BOOKING_DATE";
 export const SET_SELECTED_SHOW = "SET_SELECTED_SHOW";
 export const FETCH_SEAT_INFORMATION_SUCCESS = "FETCH_SEAT_INFORMATION_SUCCESS";
+export const SELECT_SEAT = "SELECT_SEAT";
+export const FETCH_TICKET_INFORMATION_SUCCESS =
+  "FETCH_TICKET_INFORMATION_SUCCESS";
+export const CLEAR_DATA = "CLEAR_DATA";
 
 const fetchMoviesInProgress = {
   type: FETCH_MOVIES_PROGRESS
@@ -18,6 +22,10 @@ const movieDataFetched = data => ({
   payload: data
 });
 
+const ticketDataFetched = data => ({
+  type: FETCH_TICKET_INFORMATION_SUCCESS,
+  payload: data
+});
 const movieDetailFetched = data => ({
   type: FETCH_MOVIE_DETAIL_SUCCESS,
   payload: data
@@ -110,4 +118,29 @@ export const fetchSeatInformation = show => {
   };
 };
 
+export const selectSeat = seat => {
+  return {
+    type: SELECT_SEAT,
+    payload: seat
+  };
+};
+
+export const createTicket = (showId, seatNumbers, emailId) => {
+  return async dispatch => {
+    const ticketInformation = await axios.post(
+      `http://localhost:9090/booking`,
+      {
+        emailId,
+        showId,
+        seatNumbers,
+        paymentType: "COD"
+      }
+    );
+    dispatch(ticketDataFetched(ticketInformation.data));
+  };
+};
+
+export const clearData = () => {
+  return { type: CLEAR_DATA };
+};
 export default fetchMovies;

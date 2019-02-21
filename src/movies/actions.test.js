@@ -9,7 +9,9 @@ import fetchMovies, {
   SET_BOOKING_DATE,
   fetchShowInformation,
   fetchSeatInformation,
-  FETCH_SEAT_INFORMATION_SUCCESS
+  FETCH_SEAT_INFORMATION_SUCCESS,
+  FETCH_TICKET_INFORMATION_SUCCESS,
+  createTicket
 } from "../movies/actions";
 import MockAdapter from "axios-mock-adapter";
 import thunk from "redux-thunk";
@@ -19,7 +21,8 @@ import {
   movieDetail,
   movieItems,
   showInformation,
-  seatInformation
+  seatInformation,
+  ticketInformaton
 } from "./mock-data";
 
 const mockStore = configureMockStore([thunk]);
@@ -96,6 +99,16 @@ describe("movies/actions", () => {
       expect(store.getActions()[1]).toEqual({
         type: FETCH_SEAT_INFORMATION_SUCCESS,
         payload: seatInformation
+      });
+    });
+  });
+  it("should post booking information to create ticket and return FETCH_TICKET_INFORMATION_SUCCESS", async () => {
+    mock.onPost("http://localhost:9090/booking").reply(200, ticketInformaton);
+
+    store.dispatch(createTicket(1, ["A1", "A2"])).then(() => {
+      expect(store.getActions()[0]).toEqual({
+        type: FETCH_TICKET_INFORMATION_SUCCESS,
+        payload: ticketInformaton
       });
     });
   });

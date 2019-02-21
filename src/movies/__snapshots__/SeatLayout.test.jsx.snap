@@ -2,9 +2,6 @@
 
 exports[`show seat layout 1`] = `
 <div>
-  <div>
-    Seats
-  </div>
   <div
     className="seats-wrapper"
   >
@@ -13,16 +10,19 @@ exports[`show seat layout 1`] = `
     >
       <div
         className="seat seat-blocked"
+        onClick={[Function]}
       >
         A1
       </div>
       <div
         className="seat"
+        onClick={[Function]}
       >
         A2
       </div>
       <div
         className="seat"
+        onClick={[Function]}
       >
         A3
       </div>
@@ -32,16 +32,19 @@ exports[`show seat layout 1`] = `
     >
       <div
         className="seat"
+        onClick={[Function]}
       >
         B1
       </div>
       <div
         className="seat"
+        onClick={[Function]}
       >
         B2
       </div>
       <div
         className="seat"
+        onClick={[Function]}
       >
         B3
       </div>

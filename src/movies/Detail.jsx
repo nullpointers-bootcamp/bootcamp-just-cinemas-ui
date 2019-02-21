@@ -59,9 +59,14 @@ class Detail extends React.Component {
   };
 
   closeBookTickets = () => {
-    this.setState({
-      show: false
-    });
+    this.setState(
+      {
+        show: false
+      },
+      () => {
+        this.props.clearData();
+      }
+    );
   };
 
   render() {
@@ -76,7 +81,11 @@ class Detail extends React.Component {
       fetchShowInformation,
       id,
       selectedShow,
-      seatInformation
+      seatInformation,
+      selectSeat,
+      selectedSeats,
+      createTicket,
+      ticketInformation
     } = this.props;
     const imageUrl = `https://s3.ap-south-1.amazonaws.com/twspicinemas/banner/${imageName.toLowerCase()}.jpg`;
     return (
@@ -86,17 +95,24 @@ class Detail extends React.Component {
         {this.renderBookButton()}
         {this.renderSynopsis()}
         {this.renderStills()}
-        <BookTicketPopup
-          show={this.state.show}
-          onClose={this.closeBookTickets}
-          fetchShowInformation={fetchShowInformation}
-          movieId={id}
-          bookingDate={bookingDate}
-          showInformation={showInformation}
-          fetchSeatInformation={fetchSeatInformation}
-          selectedShow={selectedShow}
-          seatInformation={seatInformation}
-        />
+        {this.state.show ? (
+          <BookTicketPopup
+            show={this.state.show}
+            onClose={this.closeBookTickets}
+            fetchShowInformation={fetchShowInformation}
+            movieId={id}
+            bookingDate={bookingDate}
+            showInformation={showInformation}
+            fetchSeatInformation={fetchSeatInformation}
+            selectedShow={selectedShow}
+            seatInformation={seatInformation}
+            selectSeat={selectSeat}
+            selectedSeats={selectedSeats}
+            movieName={name}
+            createTicket={createTicket}
+            ticketInformation={ticketInformation}
+          />
+        ) : null}
       </div>
     );
   }
@@ -104,7 +120,8 @@ class Detail extends React.Component {
 
 Detail.defaultProps = {
   movie: null,
-  id: null
+  id: null,
+  ticketInformation: null
 };
 
 Detail.propTypes = {
@@ -121,7 +138,12 @@ Detail.propTypes = {
   showInformation: PropTypes.array.isRequired,
   fetchSeatInformation: PropTypes.func.isRequired,
   selectedShow: PropTypes.object.isRequired,
-  seatInformation: PropTypes.object.isRequired
+  seatInformation: PropTypes.object.isRequired,
+  selectSeat: PropTypes.func.isRequired,
+  selectedSeats: PropTypes.array.isRequired,
+  createTicket: PropTypes.func.isRequired,
+  ticketInformation: PropTypes.object.isRequired,
+  clearData: PropTypes.func.isRequired
 };
 
 export default Detail;

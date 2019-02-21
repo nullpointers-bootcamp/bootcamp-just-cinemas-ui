@@ -1,0 +1,58 @@
+.booking-summary-wrapper {
+  padding: 20px;
+  width: 100%;
+}
+
+.booking-summary {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
+
+.booking-summary .item {
+  border: solid 1px #000;
+  padding: 20px;
+}
+
+.booking-summary .item .label-item {
+  font-weight: 900;
+}
+
+.booking-summary .item .value {
+  font-weight: 200;
+}
+
+.booking-summary .label {
+  color: #000;
+  font-size: 22px;
+}
+
+.booking-seats {
+  font-size: 2em;
+  font-weight: 900;
+}
+
+.booking-seats .seats-value {
+  font-weight: 200;
+}
+
+.ticket-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.booking-success {
+  color: green;
+  font-size: 30px;
+}
+
+.ticket-id-label {
+  font-weight: 600;
+}
+
+.ticket-id-value {
+  font-weight: 400;
+  font-size: 20px;
+  text-transform: uppercase;
+}
