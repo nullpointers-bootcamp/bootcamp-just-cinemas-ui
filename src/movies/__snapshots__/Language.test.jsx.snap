@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`show language filter dropdown 1`] = `
+<div
+  className="form-group"
+>
+  <select
+    className="form-control"
+    onChange={[Function]}
+  >
+    <option
+      value=""
+    >
+      Languages
+    </option>
+  </select>
+</div>
+`;

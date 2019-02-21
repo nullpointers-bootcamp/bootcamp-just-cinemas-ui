@@ -12,14 +12,17 @@ import {
   FETCH_TICKET_INFORMATION_SUCCESS,
   FETCH_UPCOMING_MOVIES_SUCCESS,
   FETCH_UPCOMING_MOVIES_PROGRESS,
-  CLEAR_DATA
+  CLEAR_DATA,
+  FETCH_LANGUAGES_SUCCESS,
+  SET_SELECTED_LANGUAGE
 } from "./actions";
 import {
   movieItems,
   movieDetail,
   showInformation,
   seatInformation,
-  ticketInformaton as ticketInformation
+  ticketInformaton as ticketInformation,
+  languages
 } from "./mock-data";
 
 describe("Movie Reducer", () => {
@@ -205,6 +208,29 @@ it("should assign upcoming movies fetching", () => {
   };
 
   const actual = reducer({}, { type: FETCH_UPCOMING_MOVIES_PROGRESS });
+
+  expect(actual).toEqual(expectedState);
+});
+
+it("should assign languages", () => {
+  const expectedState = {
+    languages: languages
+  };
+
+  const actual = reducer(
+    {},
+    { type: FETCH_LANGUAGES_SUCCESS, payload: languages }
+  );
+
+  expect(actual).toEqual(expectedState);
+});
+
+it("should assign selected langugae ", () => {
+  const expectedState = {
+    selectedLanguage: 1
+  };
+
+  const actual = reducer({}, { type: SET_SELECTED_LANGUAGE, payload: 1 });
 
   expect(actual).toEqual(expectedState);
 });

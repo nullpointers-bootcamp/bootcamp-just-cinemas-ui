@@ -11,7 +11,9 @@ import {
   FETCH_TICKET_INFORMATION_SUCCESS,
   CLEAR_DATA,
   FETCH_UPCOMING_MOVIES_SUCCESS,
-  FETCH_UPCOMING_MOVIES_PROGRESS
+  FETCH_UPCOMING_MOVIES_PROGRESS,
+  FETCH_LANGUAGES_SUCCESS,
+  SET_SELECTED_LANGUAGE
 } from "./actions";
 
 const reducer = (
@@ -26,7 +28,9 @@ const reducer = (
     selectedSeats: [],
     ticketInformation: null,
     upComingMovies: [],
-    upComingMoviesFetching: false
+    upComingMoviesFetching: false,
+    languages: [],
+    selectedLanguage: ""
   },
   action
 ) => {
@@ -95,6 +99,17 @@ const reducer = (
         ...state,
         upComingMoviesFetching: true
       };
+    case FETCH_LANGUAGES_SUCCESS:
+      return {
+        ...state,
+        languages: action.payload
+      };
+    case SET_SELECTED_LANGUAGE: {
+      return {
+        ...state,
+        selectedLanguage: action.payload
+      };
+    }
     default:
       return { ...state };
   }

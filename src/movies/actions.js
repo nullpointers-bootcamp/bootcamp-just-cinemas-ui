@@ -15,6 +15,9 @@ export const CLEAR_DATA = "CLEAR_DATA";
 export const FETCH_UPCOMING_MOVIES_PROGRESS = "FETCH_UPCOMING_MOVIES_PROGRESS";
 export const FETCH_UPCOMING_MOVIES_SUCCESS = "FETCH_UPCOMING_MOVIES_SUCCESS";
 export const FETCH_UPCOMING_MOVIES_FAILURE = "FETCH_UPCOMING_MOVIES_FAILURE";
+export const FETCH_LANGUAGES_SUCCESS = "FETCH_LANGUAGES_SUCCESS";
+export const FETCH_LANGUAGES_FAILURE = "FETCH_LANGUAGES_FAILURE";
+export const SET_SELECTED_LANGUAGE = "SET_SELECTED_LANGUAGE";
 
 const fetchMoviesInProgress = {
   type: FETCH_MOVIES_PROGRESS
@@ -52,11 +55,16 @@ const movieDataFetchFailure = {
 };
 
 export const fetchMovies = () => {
-  return async dispatch => {
+  return async (dispatch, getState) => {
     dispatch(fetchMoviesInProgress);
     try {
+      let params = "";
+
+      if (getState().movies && getState().movies.selectedLanguage) {
+        params = `?language=${getState().movies.selectedLanguage}`;
+      }
       const movies = await axios.get(
-        "http://localhost:9090/movies/now-showing"
+        `http://localhost:9090/movies/now-showing${params}`
       );
 
       dispatch(movieDataFetched(movies.data));
@@ -157,15 +165,57 @@ export const clearData = () => {
 };
 
 export const fetchUpComingMovies = () => {
-  return async dispatch => {
+  return async (dispatch, getState) => {
     dispatch(fetchUpComingMoviesInProgress);
     try {
-      const movies = await axios.get("http://localhost:9090/movies/upcoming");
+      let params = "";
 
+      if (getState().movies && getState().movies.selectedLanguage) {
+        params = `?language=${getState().movies.selectedLanguage}`;
+      }
+
+      const movies = await axios.get(
+        `http://localhost:9090/movies/upcoming${params}`
+      );
       dispatch(upComingMovieDataFetched(movies.data));
     } catch (error) {
       dispatch(upcomingMovieDataFetchFailure);
     }
   };
 };
-export default fetchMovies;
+
+export const languagesDataFetched = data => {
+  return {
+    type: FETCH_LANGUAGES_SUCCESS,
+    payload: data
+  };
+};
+
+export const langugaeDataFetchFailure = error => {
+  return {
+    type: FETCH_LANGUAGES_FAILURE,
+    payload: error
+  };
+};
+
+export const fetchLanguages = () => {
+  return async dispatch => {
+    try {
+      const languages = await axios.get("http://localhost:9090/languages");
+
+      dispatch(languagesDataFetched(languages.data));
+    } catch (error) {
+      dispatch(langugaeDataFetchFailure);
+    }
+  };
+};
+
+export const setSelectedLanguage = (languageId, callback) => {
+  return async dispatch => {
+    dispatch({
+      type: SET_SELECTED_LANGUAGE,
+      payload: languageId
+    });
+    callback();
+  };
+};

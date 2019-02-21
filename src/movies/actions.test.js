@@ -15,7 +15,9 @@ import {
   FETCH_UPCOMING_MOVIES_PROGRESS,
   createTicket,
   fetchUpComingMovies,
-  fetchMovies
+  fetchMovies,
+  fetchLanguages,
+  FETCH_LANGUAGES_SUCCESS
 } from "../movies/actions";
 import MockAdapter from "axios-mock-adapter";
 import thunk from "redux-thunk";
@@ -26,7 +28,8 @@ import {
   movieItems,
   showInformation,
   seatInformation,
-  ticketInformaton
+  ticketInformaton,
+  languages
 } from "./mock-data";
 
 const mockStore = configureMockStore([thunk]);
@@ -127,6 +130,16 @@ describe("movies/actions", () => {
       expect(store.getActions()[0]).toEqual({
         type: FETCH_TICKET_INFORMATION_SUCCESS,
         payload: ticketInformaton
+      });
+    });
+  });
+  it("should fetch languages from server and return FETCH_LANGUAGE_SUCCESS", async () => {
+    mock.onGet("http://localhost:9090/languages").reply(200, languages);
+
+    store.dispatch(fetchLanguages()).then(() => {
+      expect(store.getActions()[0]).toEqual({
+        type: FETCH_LANGUAGES_SUCCESS,
+        payload: languages
       });
     });
   });
