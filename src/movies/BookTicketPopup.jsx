@@ -82,6 +82,15 @@ class BookTicketPopup extends React.Component {
       </div>
     );
   }
+
+  renderCloseButton = () => {
+    return (
+      <div className="pull-right button-close" onClick={this.props.onClose}>
+        X
+      </div>
+    );
+  };
+
   render() {
     const {
       show,
@@ -101,6 +110,7 @@ class BookTicketPopup extends React.Component {
     return (
       <Popup open={show} onClose={onClose}>
         <div>
+          {this.renderCloseButton()}
           {this.state.showBookingSummary && selectedSeats.length ? (
             <BookingSummary
               theatreName={theatreName}

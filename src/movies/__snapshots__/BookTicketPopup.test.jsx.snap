@@ -44,6 +44,12 @@ Array [
         }
     >
         <div>
+            <div
+                className="pull-right button-close"
+                onClick={[Function]}
+            >
+                X
+            </div>
             <div>
                 <div
                     className="book-ticket-wrapper"
@@ -230,6 +236,12 @@ Array [
         }
     >
         <div>
+            <div
+                className="pull-right button-close"
+                onClick={[Function]}
+            >
+                X
+            </div>
             <div>
                 <div
                     className="book-ticket-wrapper"

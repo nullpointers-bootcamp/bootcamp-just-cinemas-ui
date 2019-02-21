@@ -44,3 +44,8 @@
   margin-top: 2%;
   margin-left: 1%;
 }
+
+.button-close {
+  cursor: pointer;
+  z-index: 9999;
+}
