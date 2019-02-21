@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import BookTicketPopup from "./BookTicketPopup";
+import moment from "moment";
 
 import "./detail.css";
 class Detail extends React.Component {
@@ -111,6 +112,7 @@ class Detail extends React.Component {
             movieName={name}
             createTicket={createTicket}
             ticketInformation={ticketInformation}
+            currentDate={moment().format("YYYY-MM-DD")}
           />
         ) : null}
       </div>

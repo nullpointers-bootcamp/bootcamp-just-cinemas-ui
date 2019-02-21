@@ -17,10 +17,7 @@ class BookTicketPopup extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchShowInformation(
-      moment().format("YYYY-MM-DD"),
-      this.props.movieId
-    );
+    this.props.fetchShowInformation(this.props.currentDate, this.props.movieId);
   }
 
   fetchShowInformation = day => {
@@ -185,6 +182,7 @@ BookTicketPopup.propTypes = {
   selectedSeats: PropTypes.array.isRequired,
   movieName: PropTypes.string.isRequired,
   createTicket: PropTypes.func.isRequired,
-  ticketInformation: PropTypes.object.isRequired
+  ticketInformation: PropTypes.object.isRequired,
+  currentDate: PropTypes.string.isRequired
 };
 export default BookTicketPopup;

@@ -1,24 +1,36 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "./bookingSummary.css";
+import cx from "classnames";
 
 class BookingSummary extends React.Component {
   constructor() {
     super();
     this.state = {
-      email: ""
+      email: "",
+      error: ""
     };
   }
 
   handleChange = e => {
     this.setState({
-      email: e.target.value
+      email: e.target.value,
+      error: ""
     });
   };
   onConfirm = () => {
-    const { seats, createTicket, showId } = this.props;
-    createTicket(showId, seats, this.state.email);
+    if (this.isValidEmail(this.state.email)) {
+      const { seats, createTicket, showId } = this.props;
+      createTicket(showId, seats, this.state.email);
+    } else {
+      this.setState({
+        error: "enter a valid email"
+      });
+    }
   };
+  isValidEmail(email) {
+    return /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(email);
+  }
   renderTicketInformation = () => {
     const {
       ticketInformation: { bookingRefNumber }
@@ -78,7 +90,11 @@ class BookingSummary extends React.Component {
           this.renderTicketInformation()
         ) : (
           <div>
-            <div className="form-group">
+            <div
+              className={cx("form-group", {
+                "has-error": this.state.error
+              })}
+            >
               <label>Email address:</label>
               <input
                 type="email"
@@ -86,6 +102,7 @@ class BookingSummary extends React.Component {
                 value={this.state.email}
                 onChange={this.handleChange}
               />
+              <span className="help-block">{this.state.error}</span>
             </div>
             {this.state.email ? (
               <button

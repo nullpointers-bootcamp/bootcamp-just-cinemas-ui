@@ -23,6 +23,7 @@ it("should show the movie ticket pop ", () => {
         selectedSeats={[]}
         createTicket={() => {}}
         ticketInformation={{}}
+        currentDate={"2019-02-21"}
       />
     )
     .toJSON();
@@ -45,6 +46,7 @@ it("should hide the movie ticket pop ", () => {
         selectedSeats={[]}
         createTicket={() => {}}
         ticketInformation={{}}
+        currentDate={"2019-02-21"}
       />
     )
     .toJSON();
@@ -66,6 +68,7 @@ it("should get next 5 days from current date ", () => {
       selectedSeats={[]}
       createTicket={() => {}}
       ticketInformation={{}}
+      currentDate={"2019-02-21"}
     />
   );
   expect(wrapper.instance().getNextNDaysFromGivenDate("2019-02-20", 5)).toEqual(
@@ -89,6 +92,7 @@ it("should highlight date when it is selected ", () => {
         selectedSeats={[]}
         createTicket={() => {}}
         ticketInformation={{}}
+        currentDate={"2019-02-21"}
       />
     )
     .toJSON();
@@ -111,6 +115,7 @@ it("should trigger fetchShowInformation on component did mount", () => {
       selectedSeats={[]}
       createTicket={() => {}}
       ticketInformation={{}}
+      currentDate={"2019-02-21"}
     />
   );
   expect(mockFetchShowInformation.mock.calls.length).toBe(1);
