@@ -17,19 +17,23 @@ class MovieGrid extends Component {
   }
 
   showMovies() {
-    return (
-      <div className="movie-list-container">
-        {this.props.movies.map(({ name, imageName, id, experiences }) => (
-          <MovieItem
-            key={name}
-            name={name}
-            imageName={imageName}
-            experiences={experiences}
-            id={id}
-          />
-        ))}
-      </div>
-    );
+    if (!this.props.movies.length) {
+      return <p className="no-movies">No Movies found.</p>;
+    } else {
+      return (
+        <div className="movie-list-container">
+          {this.props.movies.map(({ name, imageName, id, experiences }) => (
+            <MovieItem
+              key={name}
+              name={name}
+              imageName={imageName}
+              experiences={experiences}
+              id={id}
+            />
+          ))}
+        </div>
+      );
+    }
   }
 
   showProgress() {
