@@ -127,6 +127,8 @@ class BookTicketPopup extends React.Component {
                   shows={showInformation}
                   fetchSeatInformation={fetchSeatInformation}
                 />
+              ) : bookingDate && !selectedShow ? (
+                <p className="no-shows">No Shows available</p>
               ) : null}
               {selectedShow ? this.renderSelectedShowInformation() : null}
               {seatInformation ? (
