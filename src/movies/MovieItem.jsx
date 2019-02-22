@@ -7,8 +7,10 @@ const MovieItem = ({ name, imageName, id, experiences }) => {
   return (
     <Link className="movie-item" to={`movies/${id}`}>
       <img alt={name} className="movie-thumbnail" src={imageUrl} />
-      <h5 className="name">{name}</h5>
-      <p className="experiences">{experiences}</p>
+      <div className="movie-item-details">
+        <h5 className="name">{name}</h5>
+        <p className="experiences">{experiences}</p>
+      </div>
     </Link>
   );
 };

@@ -37,7 +37,6 @@ class BookingSummary extends React.Component {
     } = this.props;
     return (
       <div className="ticket-wrapper">
-        <div className="booking-success">Booking successful</div>
         <div className="ticket-id-label">TICKET ID</div>
         <div className="ticket-id-value">{bookingRefNumber}</div>
       </div>
@@ -56,8 +55,15 @@ class BookingSummary extends React.Component {
 
     return (
       <div className="booking-summary-wrapper">
-        <h1>Booking {ticketInformation ? "Confirmed" : "Summary"}</h1>
+        <div className="booking-title" />
         <div className="booking-summary">
+          <div
+            className={cx("item item-header", {
+              confirmed: ticketInformation
+            })}
+          >
+            Booking <br /> {ticketInformation ? "Confirmed" : "Summary"}
+          </div>
           <div className="item">
             <div className="label-item">
               Movie
@@ -82,9 +88,12 @@ class BookingSummary extends React.Component {
               <div className="value"> {time} </div>
             </span>
           </div>
-        </div>
-        <div className="booking-seats">
-          Seats: <span className="seats-value">{seats.join(", ")}</span>
+          <div className="item">
+            <span className="label-item">
+              Seats
+              <div className="value"> {seats.join(", ")} </div>
+            </span>
+          </div>
         </div>
         {ticketInformation ? (
           this.renderTicketInformation()
@@ -107,7 +116,7 @@ class BookingSummary extends React.Component {
             {this.state.email ? (
               <button
                 type="button"
-                className="btn btn-success pull-right"
+                className="btn btn-success pull-right confirm-button"
                 onClick={this.onConfirm}
               >
                 Confirm Booking

@@ -63,7 +63,7 @@ class Home extends React.Component {
     } = this.props;
 
     return (
-      <div>
+      <div className="container home-page">
         <div className="filter-wrapper pull-right">
           <LanguageFilter
             languages={languages}

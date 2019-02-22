@@ -10,6 +10,7 @@ import AboutUs from "./pages/AboutUs";
 import MovieDetail from "./pages/MovieDetail";
 import TermsAndConditions from "./pages/TermsAndConditions";
 import { Switch, Route } from "react-router-dom";
+import "./App.css";
 
 const browserHistory = createHistory();
 
@@ -25,7 +26,7 @@ const Routes = () => (
 );
 
 const Main = () => (
-  <div className="container">
+  <div>
     <Header />
     <Routes />
     <Footer />

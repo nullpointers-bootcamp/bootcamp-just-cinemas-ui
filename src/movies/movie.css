@@ -9,10 +9,18 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background: #fff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.12), 0 2px 4px 0 rgba(0, 0, 0, 0.08);
+}
+
+.movie-list-container a {
+  text-decoration: none;
+  width: 200px;
 }
 
 .movie-item .movie-thumbnail {
   align-self: center;
+  margin: 10px;
 }
 
 .movie-item .name {

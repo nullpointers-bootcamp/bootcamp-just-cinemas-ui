@@ -3,6 +3,13 @@
   justify-content: center;
   align-items: center;
   width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0px 0px 10px #768591;
+  background: #fff;
 }
 
 .footer-links {

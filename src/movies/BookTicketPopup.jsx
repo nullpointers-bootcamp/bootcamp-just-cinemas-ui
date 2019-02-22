@@ -46,7 +46,7 @@ class BookTicketPopup extends React.Component {
   }
 
   renderDates() {
-    const days = this.getNextNDaysFromGivenDate(Date.now(), 10);
+    const days = this.getNextNDaysFromGivenDate(Date.now(), 8);
     return (
       <div className="booking-dates-wrapper">
         {days.map((day, index) => this.renderDate(day, index))}
@@ -83,7 +83,7 @@ class BookTicketPopup extends React.Component {
   renderCloseButton = () => {
     return (
       <div className="pull-right button-close" onClick={this.props.onClose}>
-        X
+        (X)
       </div>
     );
   };
@@ -106,7 +106,7 @@ class BookTicketPopup extends React.Component {
     const { theatreName, screenName, time, showId } = selectedShow || {};
     return (
       <Popup open={show} onClose={onClose}>
-        <div>
+        <div className="popup-wrapper">
           {this.renderCloseButton()}
           {this.state.showBookingSummary && selectedSeats.length ? (
             <BookingSummary
@@ -136,22 +136,24 @@ class BookTicketPopup extends React.Component {
                   selectedSeats={selectedSeats}
                 />
               ) : null}
-              <div className="popup-footer">
-                {selectedSeats && selectedSeats.length ? (
-                  <div className="selected-seats">
-                    Selected Seats: {selectedSeats.join(", ")}
+              {selectedSeats && selectedSeats.length ? (
+                <div className="popup-footer row">
+                  <div className="col col-xs-11">
+                    <div className="selected-seats">
+                      Selected Seats: {selectedSeats.join(", ")}
+                    </div>
                   </div>
-                ) : null}
-                {selectedSeats.length ? (
-                  <button
-                    type="button"
-                    className="proceed-btn btn btn-primary pull-right"
-                    onClick={this.toggleBookingSummary}
-                  >
-                    Proceed
-                  </button>
-                ) : null}
-              </div>
+                  <div className="col col-xs-1">
+                    <button
+                      type="button"
+                      className="proceed-btn btn btn-primary pull-right"
+                      onClick={this.toggleBookingSummary}
+                    >
+                      Proceed
+                    </button>
+                  </div>
+                </div>
+              ) : null}
             </div>
           )}
         </div>

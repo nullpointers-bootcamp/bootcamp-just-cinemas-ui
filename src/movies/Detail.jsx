@@ -45,10 +45,8 @@ class Detail extends React.Component {
   }
   renderBookButton() {
     return (
-      <div onClick={this.openBookTickets}>
-        <button className="btn btn-primary pull-right book-button">
-          Book Ticket
-        </button>
+      <div className="pull-right" onClick={this.openBookTickets}>
+        <button className="btn btn-primary book-button">Book Ticket</button>
       </div>
     );
   }
@@ -91,30 +89,39 @@ class Detail extends React.Component {
     const imageUrl = `https://s3.ap-south-1.amazonaws.com/twspicinemas/banner/${imageName.toLowerCase()}.jpg`;
     return (
       <div>
-        <h1 className="name">{name}</h1>
+        <div className="movie-name-wrapper">
+          <div className="container">
+            <div className="col col-xs-10">
+              <h1 className="name">{name}</h1>
+            </div>
+            <div className="col col-xs-2">{this.renderBookButton()}</div>
+          </div>
+        </div>
         <img className="banner" alt={name} src={imageUrl} />
-        {this.renderBookButton()}
-        {this.renderSynopsis()}
-        {this.renderStills()}
-        {this.state.show ? (
-          <BookTicketPopup
-            show={this.state.show}
-            onClose={this.closeBookTickets}
-            fetchShowInformation={fetchShowInformation}
-            movieId={id}
-            bookingDate={bookingDate}
-            showInformation={showInformation}
-            fetchSeatInformation={fetchSeatInformation}
-            selectedShow={selectedShow}
-            seatInformation={seatInformation}
-            selectSeat={selectSeat}
-            selectedSeats={selectedSeats}
-            movieName={name}
-            createTicket={createTicket}
-            ticketInformation={ticketInformation}
-            currentDate={moment().format("YYYY-MM-DD")}
-          />
-        ) : null}
+        <div className="container">
+          <div className="col col-xs-10"> {this.renderSynopsis()} </div>
+          <div className="col col-xs-2">{this.renderStills()} </div>
+
+          {this.state.show ? (
+            <BookTicketPopup
+              show={this.state.show}
+              onClose={this.closeBookTickets}
+              fetchShowInformation={fetchShowInformation}
+              movieId={id}
+              bookingDate={bookingDate}
+              showInformation={showInformation}
+              fetchSeatInformation={fetchSeatInformation}
+              selectedShow={selectedShow}
+              seatInformation={seatInformation}
+              selectSeat={selectSeat}
+              selectedSeats={selectedSeats}
+              movieName={name}
+              createTicket={createTicket}
+              ticketInformation={ticketInformation}
+              currentDate={moment().format("YYYY-MM-DD")}
+            />
+          ) : null}
+        </div>
       </div>
     );
   }

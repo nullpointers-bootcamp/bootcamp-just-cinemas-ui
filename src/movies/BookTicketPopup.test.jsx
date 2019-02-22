@@ -115,7 +115,7 @@ it("should trigger fetchShowInformation on component did mount", () => {
       selectedSeats={[]}
       createTicket={() => {}}
       ticketInformation={{}}
-      currentDate={"2019-02-21"}
+      currentDate={moment().format("YYYY-MM-DD")}
     />
   );
   expect(mockFetchShowInformation.mock.calls.length).toBe(1);

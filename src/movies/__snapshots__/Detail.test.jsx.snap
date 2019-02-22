@@ -2,56 +2,88 @@
 
 exports[`show movie detail information 1`] = `
 <div>
-  <h1
-    className="name"
+  <div
+    className="movie-name-wrapper"
   >
-    Kabali
-  </h1>
+    <div
+      className="container"
+    >
+      <div
+        className="col col-xs-10"
+      >
+        <h1
+          className="name"
+        >
+          Kabali
+        </h1>
+      </div>
+      <div
+        className="col col-xs-2"
+      >
+        <div
+          className="pull-right"
+          onClick={[Function]}
+        >
+          <button
+            className="btn btn-primary book-button"
+          >
+            Book Ticket
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
   <img
     alt="Kabali"
     className="banner"
     src="https://s3.ap-south-1.amazonaws.com/twspicinemas/banner/kabali.jpg"
   />
   <div
-    onClick={[Function]}
+    className="container"
   >
-    <button
-      className="btn btn-primary pull-right book-button"
-    >
-      Book Ticket
-    </button>
-  </div>
-  <div>
-    <h4
-      className="synopsis-label"
-    >
-      SYNOPSIS
-    </h4>
-    <p
-      className="synopsis-content"
-    >
-      A man attempts to protect his family from enemies, gained in his time as a gangster. After he is released from prison on false charges, he resumes his post as gang leader and continues a long-held rivalry.
-    </p>
-  </div>
-  <div>
-    <h4
-      className="stills-label"
-    >
-      IMAGES
-    </h4>
     <div
-      className="stills-wrapper"
+      className="col col-xs-10"
     >
-      <img
-        alt="kabali_1"
-        className="still-item"
-        src="https://s3.ap-south-1.amazonaws.com/twspicinemas/stills/kabali_1.jpg"
-      />
-      <img
-        alt="kabali_2"
-        className="still-item"
-        src="https://s3.ap-south-1.amazonaws.com/twspicinemas/stills/kabali_2.jpg"
-      />
+       
+      <div>
+        <h4
+          className="synopsis-label"
+        >
+          SYNOPSIS
+        </h4>
+        <p
+          className="synopsis-content"
+        >
+          A man attempts to protect his family from enemies, gained in his time as a gangster. After he is released from prison on false charges, he resumes his post as gang leader and continues a long-held rivalry.
+        </p>
+      </div>
+       
+    </div>
+    <div
+      className="col col-xs-2"
+    >
+      <div>
+        <h4
+          className="stills-label"
+        >
+          IMAGES
+        </h4>
+        <div
+          className="stills-wrapper"
+        >
+          <img
+            alt="kabali_1"
+            className="still-item"
+            src="https://s3.ap-south-1.amazonaws.com/twspicinemas/stills/kabali_1.jpg"
+          />
+          <img
+            alt="kabali_2"
+            className="still-item"
+            src="https://s3.ap-south-1.amazonaws.com/twspicinemas/stills/kabali_2.jpg"
+          />
+        </div>
+      </div>
+       
     </div>
   </div>
 </div>

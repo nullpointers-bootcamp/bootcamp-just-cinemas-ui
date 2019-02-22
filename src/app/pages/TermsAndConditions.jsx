@@ -1,7 +1,7 @@
 import React from "react";
 
 const TermsAndConditions = () => (
-  <div>
+  <div className="container page">
     <h1>Terms and Conditions</h1>
     <p>
       It is a long established fact that a reader will be distracted by the

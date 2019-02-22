@@ -1,14 +1,19 @@
+.home-page {
+  margin-top: 1%;
+}
 .toggle-button {
   padding: 10px;
-  border: solid 1px #000000;
   width: 200px;
   cursor: pointer;
   text-align: center;
 }
 
 .selected {
-  background: red;
-  color: white;
+  color: #fff;
+  border-bottom: 2px solid #007ee3;
+  font-weight: 700;
+  background: #007ee3;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.12), 0 2px 4px 0 rgba(0, 0, 0, 0.08);
 }
 
 .toggle-wrapper {

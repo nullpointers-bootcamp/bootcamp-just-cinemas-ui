@@ -5,24 +5,27 @@
 .seats-row {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .seat {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 5px;
   border: solid 1px #000;
   margin: 2px;
-  width: 80px;
+  width: 50px;
   align-self: center;
   cursor: pointer;
-  justify-content: center;
 }
 
 .seat-blocked {
-  background: grey;
+  background: #768591;
   color: #fff;
 }
 
 .seat-selected {
-  background: green;
+  background: #007ee3;
   color: #fff;
 }

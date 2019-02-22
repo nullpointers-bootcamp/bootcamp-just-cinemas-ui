@@ -43,12 +43,14 @@ Array [
               }
         }
     >
-        <div>
+        <div
+            className="popup-wrapper"
+        >
             <div
                 className="pull-right button-close"
                 onClick={[Function]}
             >
-                X
+                (X)
             </div>
             <div>
                 <div
@@ -59,17 +61,6 @@ Array [
                     >
                         <div
                             className="booking-date-item date-selected"
-                            onClick={[Function]}
-                        >
-                            <div>
-                                Thu
-                            </div>
-                            <div>
-                                21
-                            </div>
-                        </div>
-                        <div
-                            className="booking-date-item"
                             onClick={[Function]}
                         >
                             <div>
@@ -156,17 +147,6 @@ Array [
                                 01
                             </div>
                         </div>
-                        <div
-                            className="booking-date-item"
-                            onClick={[Function]}
-                        >
-                            <div>
-                                Sat
-                            </div>
-                            <div>
-                                02
-                            </div>
-                        </div>
                     </div>
                 </div>
                 <div
@@ -184,9 +164,6 @@ Array [
                         className="seats-wrapper"
                     />
                 </div>
-                <div
-                    className="popup-footer"
-                />
             </div>
         </div>
     </div>
@@ -235,12 +212,14 @@ Array [
               }
         }
     >
-        <div>
+        <div
+            className="popup-wrapper"
+        >
             <div
                 className="pull-right button-close"
                 onClick={[Function]}
             >
-                X
+                (X)
             </div>
             <div>
                 <div
@@ -249,17 +228,6 @@ Array [
                     <div
                         className="booking-dates-wrapper"
                     >
-                        <div
-                            className="booking-date-item"
-                            onClick={[Function]}
-                        >
-                            <div>
-                                Thu
-                            </div>
-                            <div>
-                                21
-                            </div>
-                        </div>
                         <div
                             className="booking-date-item"
                             onClick={[Function]}
@@ -348,17 +316,6 @@ Array [
                                 01
                             </div>
                         </div>
-                        <div
-                            className="booking-date-item"
-                            onClick={[Function]}
-                        >
-                            <div>
-                                Sat
-                            </div>
-                            <div>
-                                02
-                            </div>
-                        </div>
                     </div>
                 </div>
                 <div
@@ -376,9 +333,6 @@ Array [
                         className="seats-wrapper"
                     />
                 </div>
-                <div
-                    className="popup-footer"
-                />
             </div>
         </div>
     </div>

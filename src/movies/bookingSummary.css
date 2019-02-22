@@ -1,18 +1,30 @@
 .booking-summary-wrapper {
-  padding: 20px;
+  padding: 10px;
   width: 100%;
+  clear: both;
 }
 
 .booking-summary {
   display: grid;
-  grid-template-columns: auto auto auto auto;
+  grid-template-columns: auto auto auto auto auto auto;
+  margin-bottom: 2%;
 }
 
 .booking-summary .item {
-  border: solid 1px #000;
+  background: #768591;
+  color: #fff;
   padding: 20px;
 }
-
+.booking-summary .item-header {
+  background: #007ee3;
+  font-size: 20px;
+  font-weight: 200;
+  word-wrap: break-word;
+}
+.booking-summary .confirmed {
+  background: #4faa6d;
+  font-weight: 500;
+}
 .booking-summary .item .label-item {
   font-weight: 900;
 }
@@ -26,11 +38,6 @@
   font-size: 22px;
 }
 
-.booking-seats {
-  font-size: 2em;
-  font-weight: 900;
-}
-
 .booking-seats .seats-value {
   font-weight: 200;
 }
@@ -40,6 +47,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border-top: 1px solid #768591;
+  border-bottom: 1px solid #768591;
+  padding: 15px;
 }
 
 .booking-success {
@@ -55,4 +65,13 @@
   font-weight: 900;
   font-size: 30px;
   text-transform: uppercase;
+}
+
+.booking-title {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.confirm-button {
+  background: #007ee3;
 }

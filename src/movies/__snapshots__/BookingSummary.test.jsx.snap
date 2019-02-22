@@ -4,13 +4,20 @@ exports[`should show the movie ticket pop  1`] = `
 <div
   className="booking-summary-wrapper"
 >
-  <h1>
-    Booking 
-    Confirmed
-  </h1>
+  <div
+    className="booking-title"
+  />
   <div
     className="booking-summary"
   >
+    <div
+      className="item item-header confirmed"
+    >
+      Booking 
+      <br />
+       
+      Confirmed
+    </div>
     <div
       className="item"
     >
@@ -75,25 +82,26 @@ exports[`should show the movie ticket pop  1`] = `
         </div>
       </span>
     </div>
-  </div>
-  <div
-    className="booking-seats"
-  >
-    Seats: 
-    <span
-      className="seats-value"
+    <div
+      className="item"
     >
-      A1, A2
-    </span>
+      <span
+        className="label-item"
+      >
+        Seats
+        <div
+          className="value"
+        >
+           
+          A1, A2
+           
+        </div>
+      </span>
+    </div>
   </div>
   <div
     className="ticket-wrapper"
   >
-    <div
-      className="booking-success"
-    >
-      Booking successful
-    </div>
     <div
       className="ticket-id-label"
     >

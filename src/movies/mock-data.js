@@ -197,7 +197,7 @@ export const seatInformation = {
 };
 
 export const ticketInformaton = {
-  bookingRefNumber: "439eab61-08fb-4d4c-96f6-7333c5be7320",
+  bookingRefNumber: "439eab",
   confirmedSeats: ["H3", "J3", "I3"]
 };
 
