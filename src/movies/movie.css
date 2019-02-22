@@ -22,7 +22,7 @@
 
 .movie-item .movie-thumbnail {
   align-self: center;
-  margin: 10px;
+  width: 100%;
 }
 
 .movie-item .name {
